@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070d20"><meta name="description" content="Arcane Verse Tower — a cosmic RPG progression archive.">
+<title>Arcane Verse — Tower V15</title>
+<style>
+:root{--bg:#060a18;--panel:#0c1530;--panel2:#101e3c;--line:#25385e;--blue:#7dd3fc;--blue2:#3b82f6;--gold:#f6d78b;--gold2:#b98b35;--text:#edf5ff;--muted:#9eb1d1;--purple:#b9a2ff;--danger:#ff7e9b;--good:#76e3c0;--radius:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#1c3b70 0,transparent 46%),radial-gradient(ellipse at 100% 35%,#17133f 0,transparent 32%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}.app{max-width:1280px;margin:auto;padding:0 16px 100px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid #ffffff16;position:sticky;top:0;background:#070d20eF;backdrop-filter:blur(18px);z-index:10}.brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:.08em;font-size:13px}.sigil{width:38px;height:38px;border:1px solid var(--gold2);border-radius:12px;display:grid;place-items:center;color:var(--gold);font-size:22px;background:linear-gradient(135deg,#142b52,#0b1027);box-shadow:0 0 25px #5caeff22}.tiny{font-size:11px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}.top-actions{display:flex;gap:8px}.btn,.navbtn,.chip{border:1px solid var(--line);background:#101c37;color:var(--text);border-radius:12px;padding:10px 13px}.btn.primary{background:linear-gradient(120deg,#2766a5,#264f94);border-color:#6ab5ed;color:white}.btn.gold{background:linear-gradient(120deg,#f7df9b,#c69b45);color:#201a0d;border:0;font-weight:800}.btn.danger{border-color:#6b3045;color:#ffc0cd}.btn:active,.navbtn:active{transform:translateY(1px)}.hero{position:relative;overflow:hidden;border:1px solid #436ca0;border-radius:26px;margin:20px 0;background:linear-gradient(115deg,#10284aef,#0b1530e8 54%,#17123aef);min-height:280px;padding:28px;display:grid;grid-template-columns:1.15fr .85fr;gap:15px;align-items:center}.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none}.hero:before{width:310px;height:310px;right:4%;top:-95px;border:1px solid #86c8ff2e;box-shadow:0 0 0 25px #77bfff08,0 0 0 65px #77bfff05,0 0 70px #68bfff25}.hero:after{width:5px;height:5px;background:var(--gold);right:22%;top:24%;box-shadow:45px 80px 0 #c4e9ff, -100px 115px 0 #c4e9ff, 55px -20px 0 #fff, -190px 30px 0 #e6cb8c}.eyebrow{color:var(--gold);font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800}.hero h1{font-size:clamp(36px,6vw,66px);line-height:.98;letter-spacing:-.05em;margin:12px 0 15px;max-width:650px}.hero h1 span{color:var(--blue)}.hero p{color:#b8cce9;max-width:560px}.hero-art{position:relative;min-height:220px;display:grid;place-items:center}.tower{width:min(100%,280px);height:240px;filter:drop-shadow(0 0 24px #58aaff45)}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}.stat,.card{background:linear-gradient(145deg,#0e1933ed,#0a1227ed);border:1px solid var(--line);border-radius:var(--radius);padding:16px}.stat .num{font-size:26px;font-weight:850;letter-spacing:-.04em;margin:5px 0}.stat small,.muted{color:var(--muted)}.layout{display:grid;grid-template-columns:225px minmax(0,1fr);gap:18px;margin-top:20px}.sidebar{align-self:start;position:sticky;top:84px;background:#0b142be8;border:1px solid var(--line);border-radius:var(--radius);padding:10px}.navbtn{display:flex;width:100%;text-align:left;align-items:center;gap:10px;margin:3px 0;background:transparent;border-color:transparent;color:#b7c7e4}.navbtn.active{background:#1b3154;border-color:#3b6694;color:white}.navicon{width:24px;text-align:center;color:var(--gold)}.main{min-width:0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:0 0 14px}.section-head h2{font-size:24px;margin:0;letter-spacing:-.03em}.section-head p{margin:3px 0 0;color:var(--muted);font-size:13px}.view{display:none}.view.active{display:block}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.field{width:100%;border:1px solid var(--line);border-radius:12px;background:#080f22;color:var(--text);padding:12px}.searchrow{display:flex;gap:10px;margin-bottom:14px}.searchrow>*{min-width:0}.floorgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}.floorbtn{min-height:84px;text-align:left;padding:10px;border:1px solid var(--line);border-radius:13px;background:linear-gradient(145deg,#101e3a,#0a1227);color:var(--text)}.floorbtn strong{display:block;color:var(--gold);font-size:15px}.floorbtn span{display:block;font-size:11px;color:var(--muted);margin-top:5px;line-height:1.25}.floorbtn.boss{border-color:#78613a;background:linear-gradient(145deg,#2a241a,#10172b)}.floorbtn.cleared{border-color:#2c866e;box-shadow:inset 0 0 0 1px #2c866e33}.floorbtn.selected{outline:2px solid var(--blue);background:#18365c}.floor-detail{margin-top:14px;border:1px solid #35527d;background:linear-gradient(140deg,#111f3c,#0a1228);border-radius:18px;padding:18px}.floor-detail h3{font-size:24px;margin:6px 0}.pills{display:flex;flex-wrap:wrap;gap:6px}.pill{font-size:11px;padding:5px 8px;border-radius:99px;background:#16294a;border:1px solid #2e4d77;color:#c8e8ff}.pill.gold{color:var(--gold);border-color:#806a40;background:#292318}.pill.red{color:#ffb2c2;border-color:#693348;background:#2b1727}.mechanic{padding:12px;border-left:3px solid var(--gold);background:#191e30;border-radius:0 10px 10px 0;margin:12px 0}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.progress{height:9px;border-radius:99px;background:#1c2943;overflow:hidden}.progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--blue2),var(--gold));border-radius:99px}.list{padding-left:18px;color:#c8d7ef}.list li{margin:7px 0}.godicon{height:46px;width:46px;border:1px solid #6e8ebc;background:#13284a;border-radius:14px;display:grid;place-items:center;font-size:23px}.godcard h3{margin:0 0 4px}.godcard p{color:var(--muted);font-size:13px}.table{width:100%;border-collapse:collapse;font-size:13px}.table th,.table td{text-align:left;padding:10px;border-bottom:1px solid #233553;vertical-align:top}.table th{color:var(--gold);font-weight:700}.notice{padding:12px 14px;border:1px solid #5d5238;background:#211d16;border-radius:12px;color:#f3dfac;font-size:13px}.record-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.record-stat{background:#101c36;border:1px solid var(--line);padding:12px;border-radius:13px}.record-stat strong{display:block;font-size:22px}.record-stat span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.tabs{display:flex;gap:7px;overflow:auto;padding-bottom:8px;margin-bottom:12px}.chip{white-space:nowrap;padding:8px 11px}.chip.active{border-color:var(--blue);background:#163354}.empty{padding:26px;text-align:center;color:var(--muted);border:1px dashed #324565;border-radius:14px}.bottomnav{display:none}.footer{margin-top:35px;border-top:1px solid #ffffff18;padding:20px 0;color:var(--muted);font-size:12px;text-align:center}.small{font-size:12px}.inline{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:#e8f4ff;color:#081327;padding:11px 17px;border-radius:12px;font-weight:750;box-shadow:0 10px 40px #0008;z-index:30;max-width:90vw}.hero .mini-badge{display:inline-flex;gap:7px;align-items:center;color:#d8ebff;font-size:12px;background:#ffffff0b;border:1px solid #ffffff1c;padding:7px 10px;border-radius:99px}.divider{height:1px;background:#233553;margin:14px 0}
+@media(max-width:800px){.app{padding:0 12px 95px}.topbar{top:0;padding:11px 0}.brand{font-size:11px}.hero{grid-template-columns:1fr;padding:23px 20px;min-height:unset}.hero-art{min-height:160px}.tower{height:175px}.stats{grid-template-columns:repeat(2,1fr);gap:8px}.layout{display:block}.sidebar{display:none}.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.floorgrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.floorbtn{min-height:76px;padding:8px}.record-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bottomnav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:20;justify-content:space-around;gap:1px;padding:8px 4px calc(8px + env(safe-area-inset-bottom));background:#070d20f5;backdrop-filter:blur(18px);border-top:1px solid #2b4266}.bottomnav{overflow-x:auto;justify-content:flex-start}.bottomnav button{flex:0 0 68px;min-width:68px;border:0;background:transparent;color:#9eb1d1;font-size:9px;padding:5px 1px;white-space:nowrap}.bottomnav button b{display:block;font-size:18px;font-weight:500;margin-bottom:1px}.bottomnav button.active{color:var(--gold)}.searchrow{flex-direction:column}.section-head{align-items:start}.section-head h2{font-size:22px}.grid2{grid-template-columns:1fr}.top-actions .btn{padding:8px 10px;font-size:12px}.table{min-width:500px}.tablewrap{overflow:auto}.hero h1{font-size:42px}}
+@media(min-width:801px){.hero-art{order:2}.content-wide{grid-column:1/-1}}
+
+/* V2: living galaxy wallpaper */
+#galaxy-wallpaper{position:fixed;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none;background:#050918}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at var(--glow-x,50%) var(--glow-y,30%),rgba(45,105,190,.12),transparent 34%),linear-gradient(180deg,rgba(4,8,22,.12),rgba(4,8,22,.45))}
+.cosmic-ripple{position:fixed;z-index:0;pointer-events:none;width:12px;height:12px;border:1px solid rgba(164,222,255,.9);border-radius:50%;transform:translate(-50%,-50%);animation:cosmicRipple 950ms ease-out forwards;box-shadow:0 0 18px rgba(91,184,255,.65)}
+@keyframes cosmicRipple{0%{width:10px;height:10px;opacity:.95;border-width:2px}100%{width:240px;height:240px;opacity:0;border-width:1px}}
+.app{position:relative;z-index:1}
+.topbar{background:rgba(7,13,32,.72)}
+.card,.stat,.sidebar,.floor-detail{backdrop-filter:blur(8px)}
+.wallpaper-toggle{white-space:nowrap}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+@media(max-width:800px){#galaxy-wallpaper{opacity:.82}.wallpaper-toggle{font-size:11px;padding:8px}}
+
+/* V15 professional polish */
+:root{--radius:16px;--panel:#0b142b;--line:#263b60}
+.btn,.navbtn,.chip{transition:transform .16s ease,border-color .16s ease,background .16s ease,box-shadow .16s ease;font-weight:650}
+.btn{box-shadow:0 2px 0 #0002}
+.btn:hover:not(:disabled),.chip:hover,.navbtn:hover{border-color:#6b9bd2;box-shadow:0 6px 18px #0002;transform:translateY(-1px)}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.card,.stat,.floor-detail{box-shadow:0 8px 28px #00000014}
+.section-head{padding-bottom:10px;border-bottom:1px solid #ffffff12}
+.record-hero{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;padding:22px;border:1px solid #5277a6;border-radius:20px;background:linear-gradient(125deg,#122a4a,#101a36 62%,#201b3b);margin-bottom:14px}
+.record-hero h3{font-size:clamp(23px,4vw,34px);margin:4px 0;letter-spacing:-.04em}
+.record-hero .avatar{width:68px;height:68px;border-radius:20px;border:1px solid #d8bb74;background:linear-gradient(145deg,#244b78,#151c38);display:grid;place-items:center;font-size:30px;color:var(--gold)}
+.status-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.record-stat{transition:border-color .18s ease}
+.record-stat:hover{border-color:#4d709f}
+.shop-item{position:relative;overflow:hidden}
+.shop-item h3{line-height:1.25}
+.shop-legendary{border-color:#9b6d87;background:linear-gradient(145deg,#21172e,#10162d 75%)}
+.shop-legendary:before{content:"S-RANK";position:absolute;top:12px;right:-28px;transform:rotate(35deg);background:linear-gradient(90deg,#e2c77f,#ad7c39);color:#1b1420;font-size:9px;font-weight:900;letter-spacing:.1em;padding:4px 32px}
+@media(max-width:800px){.record-hero{padding:16px}.record-hero .avatar{width:54px;height:54px}.record-grid{gap:8px}.record-stat{padding:10px}}
+
+
+/* V15.1: brighter visual identity, switchable themes, clearer navigation */
+:root{--accent:#40e0d0;--accent2:#8b5cf6;--hot:#ff4fa3;--glow:rgba(64,224,208,.28);--nav-bg:rgba(9,18,43,.94)}
+body{background:radial-gradient(ellipse at 8% 0%,color-mix(in srgb,var(--accent) 20%,transparent),transparent 36%),radial-gradient(ellipse at 92% 22%,color-mix(in srgb,var(--accent2) 18%,transparent),transparent 34%),radial-gradient(ellipse at 50% 100%,rgba(255,79,163,.08),transparent 35%),var(--bg);transition:background .25s ease,color .25s ease}
+body[data-theme="solar"]{--bg:#130b20;--panel:#251038;--panel2:#32134a;--line:#75438d;--blue:#ffdf6e;--blue2:#ff7a45;--gold:#fff08a;--gold2:#ed7c39;--text:#fff8ff;--muted:#d8b9e9;--purple:#ff9be5;--accent:#ffb52e;--accent2:#ff4d9d;--hot:#fff08a;--glow:rgba(255,181,46,.32);--nav-bg:rgba(30,10,42,.96)}
+body[data-theme="neon"]{--bg:#07141b;--panel:#0b2028;--panel2:#10313a;--line:#286a71;--blue:#76fff1;--blue2:#00d5c0;--gold:#d8ff62;--gold2:#7ecb38;--text:#effffc;--muted:#9bcac7;--purple:#a4a0ff;--accent:#76fff1;--accent2:#d8ff62;--hot:#ff5dc8;--glow:rgba(118,255,241,.3);--nav-bg:rgba(4,24,29,.96)}
+body[data-theme="aurora"]{--accent:#40e0d0;--accent2:#8b5cf6;--hot:#ff4fa3}
+.topbar{border-bottom:1px solid color-mix(in srgb,var(--accent) 38%,transparent);box-shadow:0 8px 35px #0002}
+.sigil{border-color:var(--accent);color:var(--accent);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 22%,#142b52),#0b1027);box-shadow:0 0 25px var(--glow)}
+.hero{border-color:color-mix(in srgb,var(--accent) 62%,var(--line));background:linear-gradient(115deg,color-mix(in srgb,var(--accent) 20%,#10284a),#0b1530eF 52%,color-mix(in srgb,var(--accent2) 25%,#17123a));box-shadow:0 18px 55px #0003,inset 0 1px 0 #ffffff16}
+.hero h1 span{color:var(--accent)}.eyebrow{color:var(--accent)}
+.btn.primary{background:linear-gradient(120deg,var(--accent2),var(--blue2));border-color:color-mix(in srgb,var(--accent) 65%,white);box-shadow:0 5px 18px var(--glow)}
+.btn.gold{background:linear-gradient(120deg,var(--gold),var(--accent));color:#111526;box-shadow:0 5px 22px var(--glow)}
+.stat,.card{background:linear-gradient(145deg,color-mix(in srgb,var(--panel) 92%,var(--accent) 8%),color-mix(in srgb,var(--bg) 92%,var(--accent2) 8%));border-color:color-mix(in srgb,var(--line) 80%,var(--accent) 20%)}
+.stat{position:relative;overflow:hidden}.stat:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(var(--accent),var(--accent2));opacity:.9}.stat .num{color:var(--accent)}
+.layout{align-items:start}.sidebar{background:var(--nav-bg);border-color:color-mix(in srgb,var(--line) 70%,var(--accent) 30%);box-shadow:0 15px 40px #0003;padding:12px}
+.sidebar>.tiny{color:var(--accent);font-weight:850;letter-spacing:.17em}
+.navbtn{position:relative;min-height:44px;padding:10px 12px;border-radius:13px;margin:4px 0;color:var(--muted);font-weight:700;letter-spacing:.005em}
+.navbtn .navicon{display:inline-grid;place-items:center;flex:0 0 28px;width:28px;height:28px;border-radius:9px;background:color-mix(in srgb,var(--accent) 9%,transparent);color:var(--accent);font-size:17px}
+.navbtn.active{background:linear-gradient(100deg,color-mix(in srgb,var(--accent) 23%,transparent),color-mix(in srgb,var(--accent2) 17%,transparent));border-color:color-mix(in srgb,var(--accent) 65%,var(--line));color:var(--text);box-shadow:inset 3px 0 var(--accent),0 5px 18px #0002}
+.navbtn.active .navicon{background:var(--accent);color:#091322}
+.navbtn:hover{background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.section-head{border-bottom-color:color-mix(in srgb,var(--accent) 24%,transparent)}.section-head h2{color:var(--text)}
+.pill,.chip{border-color:color-mix(in srgb,var(--line) 70%,var(--accent) 30%)}
+.chip{border-radius:999px;background:color-mix(in srgb,var(--panel2) 75%,transparent);font-weight:750}
+.chip.active{background:linear-gradient(110deg,color-mix(in srgb,var(--accent) 24%,var(--panel)),color-mix(in srgb,var(--accent2) 18%,var(--panel)));border-color:var(--accent);box-shadow:0 4px 18px var(--glow)}
+.floorbtn{transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}.floorbtn:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 8px 22px var(--glow)}.floorbtn.selected{outline:2px solid var(--accent);background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 19%,#101e3a),#0a1227)}.floorbtn strong,.table th{color:var(--accent)}
+.field{border-color:color-mix(in srgb,var(--line) 72%,var(--accent) 28%)}.field:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)}
+.theme-toggle{border-color:color-mix(in srgb,var(--accent) 60%,var(--line));background:linear-gradient(115deg,color-mix(in srgb,var(--accent) 17%,var(--panel)),color-mix(in srgb,var(--accent2) 17%,var(--panel)));white-space:nowrap}
+.bottomnav{background:var(--nav-bg);border-top:1px solid color-mix(in srgb,var(--accent) 42%,var(--line));box-shadow:0 -12px 35px #0004;padding-top:9px}
+.bottomnav button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:49px;flex:0 0 72px;min-width:72px;border:1px solid transparent;border-radius:13px;font-size:10px;font-weight:750;letter-spacing:.01em;transition:background .15s ease,color .15s ease}
+.bottomnav button b{display:grid;place-items:center;width:28px;height:26px;margin:0;border-radius:9px;font-size:19px;background:transparent}
+.bottomnav button.active{color:var(--accent);background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 18%,transparent),color-mix(in srgb,var(--accent2) 10%,transparent));border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+.bottomnav button.active b{background:var(--accent);color:#08131b}.bottomnav button:active{transform:scale(.96)}
+@media(min-width:801px){.sidebar{top:88px}.main{padding:4px 0 20px}.navbtn{font-size:13px}.top-actions{align-items:center;flex-wrap:wrap;justify-content:flex-end}}
+@media(max-width:800px){.topbar{align-items:flex-start;flex-wrap:wrap;gap:10px}.brand{flex:1 1 auto}.top-actions{width:100%;display:flex;gap:7px;overflow-x:auto;padding:1px 0 5px;scrollbar-width:none}.top-actions::-webkit-scrollbar{display:none}.top-actions .btn{flex:0 0 auto;font-size:11px;padding:8px 10px}.hero{box-shadow:0 14px 35px #0003}.stats{gap:9px}.stat,.card{padding:13px}.bottomnav{gap:5px;padding-left:7px;padding-right:7px}.bottomnav button{flex-basis:68px;min-width:68px}.section-head{gap:8px}.pill{max-width:100%}}
+
+
+/* Status-window attribute strings: line thickness scales with each stat value. */
+.status-strings-wrap{border:1px solid color-mix(in srgb,var(--accent) 38%,var(--line));border-radius:18px;padding:14px;background:radial-gradient(ellipse at 50% 45%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 68%),var(--panel)}
+.stat-string-display{width:100%;max-width:520px;margin:8px auto 0;min-height:250px;display:grid;place-items:center}
+.stat-string-display svg{width:100%;height:auto;max-height:410px;overflow:visible}
+.stat-string-legend{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
+.stat-string-key{display:flex;align-items:center;gap:7px;min-width:0;padding:8px;border:1px solid var(--line);border-radius:11px;background:color-mix(in srgb,var(--panel2) 75%,transparent);font-size:11px}
+.stat-string-key .sample{display:block;width:25px;min-width:25px;border-radius:99px;background:var(--string-color);box-shadow:0 0 10px color-mix(in srgb,var(--string-color) 55%,transparent)}
+.stat-string-key strong{display:block;font-size:12px}.stat-string-key small{color:var(--muted)}
+@media(max-width:500px){.stat-string-legend{grid-template-columns:repeat(2,minmax(0,1fr))}.stat-string-display{min-height:205px}.status-strings-wrap{padding:10px}}
+
+
+/* V15.2: high-contrast theme skins applied to the whole interface, not only the accents. */
+body[data-theme="aurora"]{--bg:#070d20;--panel:#0d1933;--panel2:#132543;--line:#30486d;--text:#f1f7ff;--muted:#a9bddb;--blue:#68e8ff;--blue2:#477dff;--gold:#ffe38b;--gold2:#b98b35;--accent:#40e0d0;--accent2:#8b5cf6;--hot:#ff4fa3;--glow:rgba(64,224,208,.32);--nav-bg:rgba(7,15,36,.97);--surface-a:#10203e;--surface-b:#0a142a;--surface-c:#172a4a}
+body[data-theme="solar"]{--bg:#180b23;--panel:#281335;--panel2:#3b1b46;--line:#87516e;--text:#fff6fb;--muted:#e2bfd8;--blue:#ffd26b;--blue2:#ff784f;--gold:#ffe17d;--gold2:#c66a32;--purple:#ff9bd9;--accent:#ffb52e;--accent2:#f44898;--hot:#fff08a;--glow:rgba(255,181,46,.35);--nav-bg:rgba(35,10,39,.97);--surface-a:#482047;--surface-b:#21102e;--surface-c:#562644}
+body[data-theme="neon"]{--bg:#04181b;--panel:#09262b;--panel2:#10383d;--line:#317b7c;--text:#effffc;--muted:#a5d8d1;--blue:#72fff1;--blue2:#00c9ba;--gold:#d7ff63;--gold2:#65c943;--purple:#aaa4ff;--accent:#76fff1;--accent2:#c6ff45;--hot:#ff5dc8;--glow:rgba(118,255,241,.34);--nav-bg:rgba(3,23,26,.97);--surface-a:#103c40;--surface-b:#072126;--surface-c:#16464a}
+body[data-theme]{background:radial-gradient(ellipse at 8% 0%,color-mix(in srgb,var(--accent) 23%,transparent),transparent 38%),radial-gradient(ellipse at 92% 22%,color-mix(in srgb,var(--accent2) 23%,transparent),transparent 36%),radial-gradient(ellipse at 48% 100%,color-mix(in srgb,var(--hot) 10%,transparent),transparent 42%),var(--bg);color:var(--text);transition:background .3s ease,color .2s ease}
+body[data-theme] .topbar,body[data-theme] .sidebar,body[data-theme] .bottomnav{background:var(--nav-bg);border-color:color-mix(in srgb,var(--accent) 48%,var(--line));backdrop-filter:blur(18px)}
+body[data-theme] .hero{background:linear-gradient(125deg,color-mix(in srgb,var(--surface-a) 78%,var(--accent) 22%),color-mix(in srgb,var(--surface-b) 84%,var(--accent2) 16%) 54%,color-mix(in srgb,var(--surface-c) 76%,var(--accent2) 24%));border-color:color-mix(in srgb,var(--accent) 72%,var(--line));box-shadow:0 18px 48px #0005,inset 0 1px 0 #ffffff18}
+body[data-theme] .stat,body[data-theme] .card,body[data-theme] .record-stat,body[data-theme] .status-strings-wrap,body[data-theme] .floor-detail,body[data-theme] .floorbtn,body[data-theme] .field,body[data-theme] .godicon{background:linear-gradient(145deg,color-mix(in srgb,var(--surface-a) 78%,var(--panel) 22%),color-mix(in srgb,var(--surface-b) 84%,var(--panel2) 16%));border-color:color-mix(in srgb,var(--line) 72%,var(--accent) 28%);color:var(--text)}
+body[data-theme] .record-stat{background:linear-gradient(145deg,color-mix(in srgb,var(--surface-c) 50%,var(--panel2)),color-mix(in srgb,var(--surface-b) 65%,var(--panel)))}
+body[data-theme] .btn,body[data-theme] .chip,body[data-theme] .pill{border-color:color-mix(in srgb,var(--line) 55%,var(--accent) 45%);background:color-mix(in srgb,var(--panel2) 78%,var(--accent) 8%);color:var(--text)}
+body[data-theme] .btn.primary{background:linear-gradient(120deg,var(--accent2),var(--blue2));border-color:color-mix(in srgb,var(--accent) 58%,white);color:#fff;box-shadow:0 6px 22px var(--glow)}
+body[data-theme] .btn.gold,body[data-theme] .pill.gold{background:linear-gradient(120deg,color-mix(in srgb,var(--gold) 78%,white),var(--accent));border-color:var(--gold);color:#161125}
+body[data-theme] .navbtn{color:var(--muted)}
+body[data-theme] .navbtn .navicon{background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent)}
+body[data-theme] .navbtn.active,body[data-theme] .chip.active{background:linear-gradient(105deg,color-mix(in srgb,var(--accent) 28%,var(--panel)),color-mix(in srgb,var(--accent2) 24%,var(--panel)));border-color:var(--accent);color:var(--text);box-shadow:inset 3px 0 var(--accent),0 5px 20px #0003}
+body[data-theme] .bottomnav button{color:var(--muted)}
+body[data-theme] .bottomnav button.active{color:var(--accent);background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 22%,transparent),color-mix(in srgb,var(--accent2) 16%,transparent));border-color:color-mix(in srgb,var(--accent) 55%,transparent)}
+body[data-theme] .bottomnav button.active b{background:var(--accent);color:var(--bg)}
+body[data-theme] .eyebrow,body[data-theme] .hero h1 span,body[data-theme] .stat .num,body[data-theme] .table th{color:var(--accent)}
+body[data-theme] .progress>i{background:linear-gradient(90deg,var(--accent2),var(--accent),var(--gold))}
+body[data-theme] .theme-toggle{min-width:max-content;box-shadow:0 4px 15px var(--glow)}
+body[data-theme="solar"] .status-strings-wrap{background:radial-gradient(ellipse at 50% 45%,rgba(255,181,46,.15),transparent 70%),linear-gradient(150deg,#311433,#1a0e2a)}
+body[data-theme="neon"] .status-strings-wrap{background:radial-gradient(ellipse at 50% 45%,rgba(118,255,241,.15),transparent 70%),linear-gradient(150deg,#0b3034,#051b21)}
+
+
+/* V15.3 — Nova Glass inspired light-glass skin */
+body[data-theme="glass"]{
+ --bg:#edf5fb;--panel:rgba(255,255,255,.72);--panel2:rgba(245,251,255,.88);--line:#d5e5f0;
+ --blue:#53b8d7;--blue2:#7b91ff;--gold:#d8b96d;--gold2:#b8a05c;--text:#23384c;--muted:#71869a;
+ --purple:#9e8ce8;--danger:#ef6582;--good:#39bca9;--accent:#61c9dc;--accent2:#a8baff;--hot:#91d9ed;
+ --glow:rgba(100,190,220,.22);--nav-bg:rgba(247,252,255,.88);--surface-a:rgba(255,255,255,.88);
+ --surface-b:rgba(239,248,253,.76);--surface-c:rgba(225,241,250,.72)
+}
+body[data-theme="glass"]{background:radial-gradient(ellipse at 10% 0%,rgba(151,220,238,.38),transparent 40%),radial-gradient(ellipse at 90% 18%,rgba(184,193,255,.3),transparent 38%),linear-gradient(145deg,#f9fcff,#eaf4fa 58%,#f5faff)!important;color:var(--text)}
+body[data-theme="glass"] .topbar,body[data-theme="glass"] .sidebar,body[data-theme="glass"] .bottomnav,
+body[data-theme="glass"] .hero,body[data-theme="glass"] .stat,body[data-theme="glass"] .card,
+body[data-theme="glass"] .record-stat,body[data-theme="glass"] .status-strings-wrap,
+body[data-theme="glass"] .floor-detail,body[data-theme="glass"] .floorbtn,body[data-theme="glass"] .field,
+body[data-theme="glass"] .godicon,body[data-theme="glass"] .panel,body[data-theme="glass"] .modal,
+body[data-theme="glass"] .modal-content,body[data-theme="glass"] .shop-item,body[data-theme="glass"] .monster-card,
+body[data-theme="glass"] .mission-card,body[data-theme="glass"] .tower-card{
+ background:linear-gradient(145deg,rgba(255,255,255,.88),rgba(235,247,253,.72))!important;
+ color:#263d52!important;border:1px solid rgba(185,214,231,.88)!important;
+ box-shadow:0 10px 30px rgba(96,139,165,.10),inset 0 1px 0 rgba(255,255,255,.95)!important;
+ backdrop-filter:blur(18px) saturate(1.25)
+}
+body[data-theme="glass"] .hero{background:linear-gradient(125deg,rgba(221,246,252,.94),rgba(242,243,255,.92) 55%,rgba(255,255,255,.9))!important}
+body[data-theme="glass"] .topbar,body[data-theme="glass"] .sidebar,body[data-theme="glass"] .bottomnav{background:rgba(248,252,255,.88)!important}
+body[data-theme="glass"] button,body[data-theme="glass"] .btn,body[data-theme="glass"] .tab,
+body[data-theme="glass"] .navbtn,body[data-theme="glass"] .floorbtn{color:#2e4c62}
+body[data-theme="glass"] .btn.primary,body[data-theme="glass"] .primary{background:linear-gradient(120deg,#b8c6ff,#77d9e9)!important;color:#17334a!important;border:1px solid rgba(255,255,255,.9)!important;box-shadow:0 6px 18px rgba(116,184,220,.24)!important}
+body[data-theme="glass"] input,body[data-theme="glass"] select,body[data-theme="glass"] textarea{background:rgba(255,255,255,.82)!important;color:#23384c!important;border-color:#cbdfea!important}
+body[data-theme="glass"] .muted,body[data-theme="glass"] .small,body[data-theme="glass"] .eyebrow{color:#71869a!important}
+body[data-theme="glass"] h1,body[data-theme="glass"] h2,body[data-theme="glass"] h3,body[data-theme="glass"] h4{color:#263d52}
+body[data-theme="glass"] .bottomnav a,body[data-theme="glass"] .bottomnav button{color:#627d91}
+body[data-theme="glass"] .status-strings-wrap{border-radius:26px!important}
+body[data-theme="glass"] .status-strings-wrap svg{filter:drop-shadow(0 2px 4px rgba(82,157,188,.18))}
+body[data-theme="glass"] .pill{background:rgba(255,255,255,.78);color:#42627a;border-color:#d1e3ed}
+@media(max-width:700px){body[data-theme="glass"] .hero,body[data-theme="glass"] .card,body[data-theme="glass"] .status-strings-wrap{border-radius:22px!important}body[data-theme="glass"] .topbar{box-shadow:0 8px 28px rgba(83,134,164,.12)!important}}
+
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<canvas id="galaxy-wallpaper" aria-hidden="true"></canvas>
+<div class="app">
+<header class="topbar">
+ <div class="brand"><div class="sigil">✧</div><div>ARCANE VERSE <div class="tiny">THE TOWER SYSTEM</div></div></div>
+ <div class="top-actions"><button class="btn wallpaper-toggle" id="wallpaperToggle" aria-pressed="true" title="Pause or resume the animated galaxy">✦ Galaxy: On</button><button class="btn theme-toggle" id="themeToggle" aria-label="Change color theme" title="Cycle the color theme">🫧 Theme: Glass</button><button class="btn" id="profileBtn">♙ Player Sign In</button><button class="btn primary" id="saveBtn">Save</button></div>
+</header>
+<section class="hero">
+ <div><div class="eyebrow">A living trial beyond the realms</div><h1>ASCEND<br>THE <span>TOWER.</span></h1><p>One hundred floors. Five divine powers. Every victory becomes part of your record. The Tower remembers.</p><div class="inline"><span class="mini-badge">✦ 100 Floors</span><span class="mini-badge">♜ 5 Gods</span><span class="mini-badge">◈ Separate Progression</span></div><div class="hero-actions"><button class="btn gold" onclick="navigate('floors')">Explore the Floors ↗</button><button class="btn" onclick="navigate('record')">Open Player Record</button></div></div>
+ <div class="hero-art"><svg class="tower" viewBox="0 0 300 250" role="img" aria-label="Cosmic tower illustration"><defs><linearGradient id="stone" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b5e9ff"/><stop offset=".48" stop-color="#376aa9"/><stop offset="1" stop-color="#17274e"/></linearGradient><linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff4c8"/><stop offset="1" stop-color="#59c8ff"/></linearGradient></defs><circle cx="150" cy="120" r="96" fill="none" stroke="#79c9ff" stroke-opacity=".22"/><circle cx="150" cy="120" r="76" fill="none" stroke="#f6d78b" stroke-opacity=".24" stroke-dasharray="4 8"/><path d="M70 218 L93 86 L115 86 L130 50 L150 17 L170 50 L185 86 L207 86 L230 218Z" fill="url(#stone)" stroke="#8edaff" stroke-width="1.5"/><path d="M112 218 L122 105 L137 79 L150 47 L163 79 L178 105 L188 218Z" fill="#09142b" stroke="#6bbcff"/><path d="M142 218 L145 101 L150 77 L155 101 L158 218Z" fill="url(#glow)" opacity=".8"/><path d="M84 151 L216 151 M78 181 L222 181 M101 108 L199 108" stroke="#9ddfff" stroke-opacity=".7" stroke-width="2"/><path d="M124 86 L124 69 L135 69 M176 86 L176 69 L165 69" stroke="#f6d78b" fill="none" stroke-width="2"/><circle cx="150" cy="17" r="5" fill="#fff1bd"/><circle cx="150" cy="17" r="13" fill="none" stroke="#f6d78b" stroke-opacity=".6"/><path d="M45 225 Q150 205 255 225" stroke="#65c6ff" stroke-opacity=".55" fill="none"/><g fill="#d8f2ff"><circle cx="42" cy="80" r="1.8"/><circle cx="243" cy="63" r="1.5"/><circle cx="225" cy="120" r="2"/><circle cx="65" cy="176" r="1.5"/><circle cx="208" cy="38" r="1.3"/><circle cx="91" cy="34" r="1.2"/></g></svg></div>
+</section>
+<div class="stats">
+ <div class="stat"><div class="tiny">Tower floors</div><div class="num">100</div><small>Ten ascent arcs</small></div>
+ <div class="stat"><div class="tiny">Divine governors</div><div class="num">05</div><small>One Vassal contract</small></div>
+ <div class="stat"><div class="tiny">Your level</div><div class="num" id="topLevel">1</div><small id="topExp">0 / 100 EXP</small></div>
+ <div class="stat"><div class="tiny">Tower Points</div><div class="num" id="topTP">0</div><small>Separate Tower currency</small></div>
+</div>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+ <div class="tiny" style="padding:10px">Tower Navigation</div>
+ <button class="navbtn active" data-view="overview"><span class="navicon">⌂</span> Overview</button>
+ <button class="navbtn" data-view="floors"><span class="navicon">♜</span> 100-Floor Archive</button>
+ <button class="navbtn" data-view="bestiary"><span class="navicon">♞</span> Bestiary</button>
+ <button class="navbtn" data-view="record"><span class="navicon">♙</span> Player Record</button>
+ <button class="navbtn" data-view="progression"><span class="navicon">✦</span> Progression <span id="progressionBadge" class="pill gold" style="display:none;margin-left:auto">LEVEL UP</span></button>
+ <button class="navbtn" data-view="player"><span class="navicon">♟</span> Player Sign In</button>
+ <button class="navbtn" data-view="shops"><span class="navicon">◇</span> Tower Shops</button>
+ <button class="navbtn" data-view="gods"><span class="navicon">✧</span> Five Gods & Vassals</button>
+ <button class="navbtn" data-view="rules"><span class="navicon">☷</span> System Rules</button>
+ <button class="navbtn" data-view="achievements"><span class="navicon">♕</span> Titles & Achievements</button>
+ <button class="navbtn staff-only-nav" data-view="gm" style="display:none"><span class="navicon">⚖</span> GM / Admin</button>
+ <div class="divider"></div><div class="small muted" style="padding:5px 10px">Tower Codex • Separate progression</div>
+</aside>
+<main class="main">
+<section class="view active" id="view-overview">
+ <div class="section-head"><div><h2>Welcome, Challenger</h2><p>Your identity belongs to Arcane Verse. Your progression belongs to the Tower.</p></div><span class="pill gold">SYSTEM ONLINE</span></div>
+ <div class="grid2">
+  <div class="card"><div class="eyebrow">Your ascent</div><h3 style="margin:8px 0">The Tower remembers.</h3><p class="muted">Your Tower build develops independently from your normal character rank, stats, abilities, and relics.</p><button class="btn primary" onclick="navigate('record')">View my record →</button></div>
+  <div class="card"><div class="eyebrow">Current arc</div><h3 style="margin:8px 0">I — The Awakening</h3><p class="muted">Floors 1–10 introduce the Tower's combat language, basic enemy mechanics, and first boss milestone.</p><button class="btn" onclick="selectFloor(1);navigate('floors')">Inspect Floor 1 →</button></div>
+ </div>
+ <div class="section-head" style="margin-top:22px"><div><h2>System pillars</h2><p>Core systems that govern every ascent.</p></div></div>
+ <div class="grid3">
+  <div class="card"><div class="godicon">↗</div><h3>Level & EXP</h3><p class="muted small">Earn EXP from cleared floors, encounters, objectives, and challenges.</p></div>
+  <div class="card"><div class="godicon">◈</div><h3>Tower Points</h3><p class="muted small">Spend TP on Tower-only stats, abilities, weapons, armor, and supplies.</p></div>
+  <div class="card"><div class="godicon">☠</div><h3>Death & Corruption</h3><p class="muted small">Death Marks and Corruption are tracked conditions with defined consequences.</p></div>
+  <div class="card"><div class="godicon">⇧</div><h3>Difficulty</h3><p class="muted small">Choose a floor's available difficulty before beginning; harder means higher risk and rewards.</p></div>
+  <div class="card"><div class="godicon">⚖</div><h3>Extraction</h3><p class="muted small">Only items explicitly marked extractable may leave the Tower.</p></div>
+  <div class="card"><div class="godicon">♜</div><h3>GM verification</h3><p class="muted small">Official clears, rewards, deaths, and records require authorized verification.</p></div>
+ </div>
+ <div class="notice" style="margin-top:14px">The Tower remembers. Official floor clears and rewards require authorized GM verification.</div>
+</section>
+<section class="view" id="view-floors">
+ <div class="section-head"><div><h2>100-Floor Archive</h2><p>Choose a floor to inspect its beast, mechanic, arc, and encounter notes.</p></div></div>
+ <div class="searchrow"><input class="field" id="floorSearch" placeholder="Search floor, beast, mechanic…" aria-label="Search floors"><select class="field" id="arcFilter" aria-label="Filter by arc"><option value="all">All arcs</option></select><select class="field" id="typeFilter" aria-label="Filter by floor type"><option value="all">All floor types</option><option value="Boss">Boss floors</option><option value="Standard">Standard floors</option><option value="Endgame">Endgame floors</option></select></div>
+ <div class="floorgrid" id="floorGrid"></div>
+ <div class="floor-detail" id="floorDetail"></div>
+</section>
+<section class="view" id="view-bestiary">
+ <div class="section-head"><div><h2>Bestiary & Monster Stat Lab</h2><p>100-floor monster catalogue with five-stat scaling, passives, two active abilities, and a signature mechanic.</p></div><span class="pill gold">TOWER CODEX</span></div>
+ <div class="notice" style="margin-bottom:12px"><strong>Scaling rule:</strong> Floor 1 begins at a 120-point base stat budget. Base stats scale progressively by floor; selected difficulty then multiplies all five stats. Easy 0.5× · Normal 1× · Hard 2× · Extreme 4×. Half values round up. This calculator is a planning tool; it does not automatically change cloud player records or reward payouts.</div>
+ <div class="searchrow"><input class="field" id="beastSearch" placeholder="Search beasts or mechanics…"><select class="field" id="beastArc"><option value="all">All arcs</option></select><select class="field" id="beastDifficulty" aria-label="Monster difficulty"><option value="Easy">Easy · 0.5×</option><option value="Normal" selected>Normal · 1×</option><option value="Hard">Hard · 2×</option><option value="Extreme">Extreme · 4×</option></select></div>
+ <div class="grid2" id="beastGrid"></div>
+</section>
+<section class="view" id="view-record">
+ <div class="section-head"><div><h2>Player Status</h2><p>Your Tower identity, progression, attributes, grants, and divine records.</p></div><span class="pill gold">STATUS WINDOW</span></div>
+  <div class="record-hero"><div><div class="eyebrow">ARCANE VERSE · TOWER DOSSIER</div><h3 id="statusCharacterName">Challenger</h3><div class="pills"><span class="pill gold" id="statusRank">Tower Level 1</span><span class="pill" id="statusFloor">Current Floor 1</span><span class="pill" id="statusSync">Cloud status pending</span></div></div><div class="avatar" aria-hidden="true">✧</div></div>
+ <div class="card">
+  <div class="grid2"><label class="small muted">Player name<input class="field" id="playerName" placeholder="Your player name"></label><label class="small muted">Existing character<input class="field" id="characterName" placeholder="Character name"></label><label class="small muted">Arcane Verse rank<input class="field" id="realmRank" placeholder="Original rank"></label><label class="small muted">Race<input class="field" id="race" placeholder="Character race"></label></div>
+  <div class="inline" style="margin-top:12px"><button class="btn primary" id="updateIdentity">Save identity</button><button class="btn" id="exportRecord">Export record JSON</button><label class="btn" for="importFile">Import record</label><input type="file" id="importFile" accept="application/json" class="hidden"></div>
+ </div>
+ <div class="record-grid" style="margin-top:12px">
+  <div class="record-stat"><span>Tower level</span><strong id="recLevel">1</strong></div><div class="record-stat"><span>Current floor</span><strong id="recFloor">1</strong></div><div class="record-stat"><span>Highest cleared</span><strong id="recHighest">0</strong></div><div class="record-stat"><span>EXP</span><strong id="recExp">0 / 100</strong></div><div class="record-stat"><span>Tower points</span><strong id="recTP">0</strong></div><div class="record-stat"><span>Deaths / victories</span><strong id="recDeaths">0 / 0</strong></div>
+ </div>
+ <div class="card" id="firstEntrySetup" style="margin-top:12px;border:1px solid var(--gold)">
+  <div class="eyebrow">FIRST ENTRY · BUILD YOUR TOWER STATS</div><h3>Choose how to allocate your 100 starting points</h3><p class="small muted">These six Tower stats are separate from your normal Arcane Verse stats. Choose a custom build or let the Tower create a balanced one. This setup applies only to a new local record. Official cloud characters use the saved Tower stats shown below.</p>
+  <div class="grid2" id="statSetupChoices"><button class="btn primary" id="manualBuildBtn">Manual Allocation</button><button class="btn" id="balancedBuildBtn">Balanced Build</button></div>
+  <div id="manualBuildPanel" class="hidden" style="margin-top:14px"><div class="row"><strong>Custom allocation</strong><span class="pill gold" id="manualPointsRemaining">100 points left</span></div><p class="small muted">Use + and − to distribute exactly 100 points.</p><div id="manualStatRows" class="grid2"></div><button class="btn primary" id="confirmManualBuild" style="margin-top:12px" disabled>Confirm Tower Build</button></div>
+ </div>
+ <div class="card" id="cloudTowerStatsCard" style="margin-top:12px;border:1px solid var(--gold)"><div class="row"><div><h3 style="margin:0">Cloud Tower Stats</h3><p class="small muted">Official stats saved in Supabase, including Goddess TOAA awards.</p></div><button class="btn" id="refreshCloudStatsBtn">Refresh</button></div><label class="small muted" style="display:block;margin-top:8px">Character<select class="field" id="cloudStatsCharacter"></select></label><div class="record-grid" id="cloudTowerStats" style="margin-top:12px"><div class="empty">Sign in to load official Tower stats.</div></div><div class="small muted" id="cloudStatsStatus" style="margin-top:8px"></div></div>
+ <div class="card" id="myToaaGrantsCard" style="margin-top:12px;border-color:#7767a8"><div class="row"><div><h3 style="margin:0">Granted Abilities & Items</h3><p class="small muted">GM/TOAA gifts saved to your Tower character.</p></div><button class="btn" id="refreshMyToaaBtn">Refresh</button></div><div id="myToaaGrants" class="small muted" style="margin-top:12px">Sign in to load your granted abilities and items.</div></div>
+ <div class="card" style="margin-top:12px"><div class="row"><h3 style="margin:0">Tower Stats</h3><span class="pill">Separate from normal stats</span></div><div class="record-grid" id="towerStats" style="margin-top:12px"></div><div class="status-strings-wrap" style="margin-top:18px"><div class="row"><div><h3 style="margin:0">Attribute Resonance</h3><p class="small muted">The strings thicken as each stat increases.</p></div><span class="pill gold">LIVE BUILD</span></div><div id="statStringDisplay" class="stat-string-display" role="img" aria-label="Visual representation of your Tower attributes"></div><div id="statStringLegend" class="stat-string-legend"></div></div><div class="inline" style="margin-top:12px"><select class="field" id="statSelect"><option>STR</option><option>SPD</option><option>END</option><option>REF</option><option>DUR</option><option>AGI</option></select><button class="btn" id="buyStat">Spend 1 stat point</button><span class="muted small" id="statPointsLabel">Stat points: 0</span></div></div>
+ <div class="grid2" style="margin-top:12px">
+  <div class="card"><h3>Death & Corruption</h3><div class="row"><span class="muted">Death Marks</span><strong id="deathMarks">0</strong></div><div class="row"><span class="muted">Corruption</span><strong id="corruptionText">0%</strong></div><div class="progress" style="margin:8px 0 12px"><i id="corruptionBar" style="width:0%"></i></div><p class="small muted" id="corruptionStage">Uncorrupted</p><p class="small muted">Death Marks and Corruption are updated through approved Tower events and staff actions.</p></div>
+  <div class="card"><h3>Divine Status</h3><div class="row"><span class="muted">Chosen God</span><strong id="chosenGod">None</strong></div><div class="row"><span class="muted">Vassal title</span><strong id="vassalTitle">None</strong></div><p class="small muted">Divine allegiance is recorded only after an approved trial. Submit an application below.</p></div>
+  <div class="card" id="myDivineBlessingsCard" style="margin-top:12px;border:1px solid var(--gold)"><div class="row"><div><h3 style="margin:0">My Divine Blessings</h3><p class="small muted">Your approved God, Vassal title, perks, and granted abilities appear here.</p></div><button class="btn" id="refreshMyBlessingsBtn">Refresh</button></div><div id="myDivineBlessings" class="small muted" style="margin-top:12px">Sign in to view blessings granted to your characters.</div></div>
+  <div class="card" style="margin-top:12px"><h3>Apply for a Divine Trial</h3><p class="small muted">Choose a registered Tower character and submit your request. A GM must approve the application and assign the blessing.</p><label class="small muted">Tower character<select class="field" id="divineCharacter"><option value="">Sign in and register a character first</option></select></label><label class="small muted" style="display:block;margin-top:8px">Trial notes<textarea class="field" id="divineTrialNotes" rows="3" placeholder="Why has your character earned this God's attention?"></textarea></label><button class="btn primary" id="applyDivineBtn" style="margin-top:10px">Submit Divine Trial Application</button><div id="divineMyApplications" class="small muted" style="margin-top:12px">Sign in to view applications.</div></div>
+ </div>
+ <div class="card" style="margin-top:12px"><h3>Record log</h3><div id="recordLog" class="small muted"></div></div>
+</section>
+<section class="view" id="view-progression">
+ <div class="section-head"><div><h2>Progression & Rewards</h2><p>Track saved Tower EXP, level requirements, reward history, and level-up milestones.</p></div><span class="pill gold">CLOUD PROGRESSION</span></div>
+ <div class="card">
+  <div class="row"><div><div class="eyebrow">Choose your character</div><p class="small muted" style="margin:5px 0 0">Progress is attached to your registered Tower character.</p></div><button class="btn" id="refreshProgressionBtn">Refresh</button></div>
+  <label class="small muted" style="display:block;margin-top:12px">Tower character<select class="field" id="progressionCharacter"></select></label>
+ </div>
+ <div id="progressionContent" style="margin-top:12px"><div class="empty">Sign in and refresh to load saved progression.</div></div>
+ <div class="card" style="margin-top:12px"><div class="eyebrow">Replay rules</div><p class="small muted">Easy and Normal replay support requires the matching database migration. Approved submissions must never be resubmitted to farm duplicate rewards; each replay must be a new request.</p></div>
+</section>
+<section class="view" id="view-shops">
+ <div class="section-head"><div><h2>Tower Shops</h2><p>Affordable essentials, mid-tier equipment, and progression-locked S-Rank stock.</p></div></div>
+ <div class="notice">The catalogue uses Tower Points and floor/level unlocks. Cloud purchases are not enabled by this HTML alone; no TP will be deducted unless a verified server-side purchase function is configured.</div>
+ <div class="record-grid" style="margin-bottom:12px"><div class="record-stat"><span>Tower Level</span><strong id="shopPlayerLevel">1</strong></div><div class="record-stat"><span>Highest Floor</span><strong id="shopPlayerFloor">0</strong></div><div class="record-stat"><span>Available TP</span><strong id="shopPlayerTP">0</strong></div></div>
+ <div class="searchrow"><input class="field" id="shopSearch" placeholder="Search items, ranks, effects…" aria-label="Search shop items"><select class="field" id="shopSort" aria-label="Sort shop items"><option value="recommended">Recommended order</option><option value="priceAsc">Price: low to high</option><option value="priceDesc">Price: high to low</option><option value="rankDesc">Highest rank first</option></select></div>
+ <div class="tabs" id="shopTabs"><button class="chip active" data-category="All">All</button><button class="chip" data-category="Weapons">Weapons</button><button class="chip" data-category="Armor">Armor</button><button class="chip" data-category="Abilities">Abilities</button><button class="chip" data-category="Consumables">Consumables</button><button class="chip" data-category="S-Rank">S-Rank</button></div>
+ <div class="grid2" id="shopGrid"></div>
+ <div class="card" style="margin-top:12px"><h3>Inventory</h3><div id="inventoryList" class="muted small">No items purchased.</div></div>
+</section>
+<section class="view" id="view-gods">
+ <div class="section-head"><div><h2>The Five Gods</h2><p>Five divine powers govern the Tower. A player may hold one true Vassal contract at a time.</p></div></div>
+ <div class="grid2" id="godsGrid"></div>
+ <div class="card" style="margin-top:12px"><h3>Vassal rules</h3><ul class="list"><li>Players may interact with all five Gods, but may have only one true Vassal contract at a time.</li><li>Vassalhood requires a divine trial, eligibility, and the God's acceptance.</li><li>Vassals gain a title, a unique perk, God-specific quests, and possible exclusive rewards.</li><li>Changing allegiance may require breaking the existing contract and may remove its benefits.</li><li>Gods cannot freely overwrite another player's progression; the Tower remains the governing authority.</li></ul></div>
+</section>
+<section class="view" id="view-rules">
+ <div class="section-head"><div><h2>Tower System Rules</h2><p>Compact reference for players and GMs.</p></div></div>
+ <div class="grid2" id="rulesGrid"></div>
+</section>
+<section class="view" id="view-achievements">
+ <div class="section-head"><div><h2>Achievements & Titles</h2><p>Records of milestones earned during the ascent.</p></div></div>
+ <div class="grid2" id="achievementGrid"></div>
+</section>
+<section class="view" id="view-player">
+ <div class="section-head"><div><h2>Player Portal</h2><p>Sign in separately from the GM control room. Your Tower progression is separate from your original Arcane Verse character.</p></div><span class="pill gold">PLAYER ACCESS</span></div>
+ <div class="card" style="margin-top:12px">
+  <h3>Player sign-in</h3><div class="grid2"><label class="small muted">Email<input class="field" id="authEmail" type="email" placeholder="you@example.com" autocomplete="email"></label><label class="small muted">Password<input class="field" id="authPassword" type="password" placeholder="At least 8 characters" autocomplete="current-password"></label></div>
+  <div class="inline" style="margin-top:12px"><button class="btn primary" id="signUpBtn">Create player account</button><button class="btn" id="signInBtn">Sign in</button><button class="btn" id="signOutBtn">Sign out</button></div><p id="authState" class="small muted">Not signed in.</p>
+ </div>
+ <div class="grid2" style="margin-top:12px">
+  <div class="card"><h3>Register your Tower character</h3><label class="small muted">Existing Arcane Verse character name<input class="field" id="charNameInput" placeholder="Character name"></label><div class="grid2" style="margin-top:8px"><label class="small muted">Arcane Verse rank<input class="field" id="charRankInput" placeholder="Original rank"></label><label class="small muted">Race<input class="field" id="charRaceInput" placeholder="Race"></label></div><button class="btn primary" id="createCharacterBtn" style="margin-top:10px">Register character</button><div id="myCharacters" class="small muted" style="margin-top:12px">Sign in to register a character.</div></div>
+  <div class="card"><h3>Submit a floor clear</h3><label class="small muted">Character<select class="field" id="clearCharacter"><option value="">Register a character first</option></select></label><div class="grid2" style="margin-top:8px"><label class="small muted">Floor number<input class="field" id="clearFloor" type="number" min="1" max="100" value="1"></label><label class="small muted">Difficulty<select class="field" id="clearDifficulty"><option>Normal</option><option>Easy</option><option>Hard</option><option>Extreme</option></select></label></div><label class="small muted" style="display:block;margin-top:8px">RP transcript / evidence URL<input class="field" id="clearEvidence" type="url" placeholder="https://… (optional if notes supplied)"></label><label class="small muted" style="display:block;margin-top:8px">Encounter summary and objectives completed<textarea class="field" id="clearNotes" rows="3" placeholder="Explain how the objective, beast, and required mechanic were completed."></textarea></label><button class="btn primary" id="submitClearBtn" style="margin-top:10px">Submit for GM review</button></div>
+ </div>
+ <div class="card" style="margin-top:12px"><div class="row"><div><h3 style="margin:0">My Cloud Tower Progress</h3><p class="small muted">Official records saved in Supabase and shared across devices.</p></div><button class="btn" id="refreshRecordsBtn">Refresh records</button></div><div id="cloudRecords" class="small muted" style="margin-top:10px">Connect and sign in to load official Tower records.</div></div>
+ <div class="card" style="margin-top:12px"><div class="row"><h3 style="margin:0">My submissions</h3><button class="btn" id="refreshMineBtn">Refresh</button></div><div id="myRequests" class="small muted" style="margin-top:10px">Connect and sign in to load submissions.</div></div>
+
+</section>
+<section class="view" id="view-gm">
+ <div class="section-head"><div><h2>GM & Admin Control Room</h2><p>Staff tools, cloud-backed submissions, disciplinary corrections, and audit history.</p></div><span class="pill gold" id="backendStatus">NOT CONFIGURED</span></div>
+ <div class="notice">This room is for verified Tower staff only. Backend connection settings are shown only after a GM/Admin account is authenticated. Never use a service-role or secret key in the browser.</div>
+ <div class="card" id="backendSettingsPanel" style="margin-top:12px;display:none">
+  <h3>Backend connection settings</h3>
+  <div class="grid2"><label class="small muted">Supabase Project URL<input class="field" id="sbUrl" placeholder="https://your-project.supabase.co" autocomplete="url"></label><label class="small muted">Supabase anon / publishable key<input class="field" id="sbKey" placeholder="sb_publishable_… or anon key" autocomplete="off"></label></div>
+  <div class="inline" style="margin-top:12px"><button class="btn primary" id="connectSupabase">Connect & save on this device</button><button class="btn" id="forgetSupabase">Forget config</button></div>
+  <p class="small muted">The public anon/publishable key is intended for browser use with correctly configured Row Level Security. Never paste a service-role or secret key here.</p>
+ </div>
+
+
+ <div class="card" id="disciplinePanel" style="margin-top:12px;border:1px solid #8d5269;display:none" aria-live="polite">
+  <div class="row"><div><h3 style="margin:0">5. GM Discipline & Record Management</h3><p class="small muted">Admin/GM only. Corrections are saved to Supabase and recorded in a discipline audit log.</p></div><span class="pill red">STAFF ONLY</span></div>
+  <div class="notice" style="margin:10px 0">Use only for documented corrections or confirmed cheating. Tower changes never alter the character's original Arcane Verse Codex. A database migration must be installed before this panel can save changes.</div>
+  <label class="small muted">Tower character<select class="field" id="disciplineCharacter"><option value="">Load staff records first</option></select></label>
+  <div class="inline" style="margin-top:8px"><button class="btn" id="loadDisciplineBtn">Load player records</button><button class="btn" id="fillDisciplineBtn">Load selected record into form</button></div>
+  <div id="disciplineCurrent" class="small muted" style="margin-top:8px">Select a character and load records.</div>
+  <div class="grid2" style="margin-top:10px">
+   <label class="small muted">Tower Level<input class="field" id="disciplineLevel" type="number" min="1" max="999" value="1"></label>
+   <label class="small muted">Current EXP<input class="field" id="disciplineExp" type="number" min="0" value="0"></label>
+   <label class="small muted">Tower Points (TP)<input class="field" id="disciplineTp" type="number" min="0" value="0"></label>
+   <label class="small muted">Current Floor<input class="field" id="disciplineCurrentFloor" type="number" min="1" max="101" value="1"></label>
+   <label class="small muted">Highest Floor Cleared<input class="field" id="disciplineHighestFloor" type="number" min="0" max="100" value="0"></label>
+  </div>
+  <label class="small muted" style="display:block;margin-top:8px">Required reason / case reference<textarea class="field" id="disciplineReason" rows="3" placeholder="Explain the confirmed rule violation or record correction. Include evidence/case reference where possible."></textarea></label>
+  <button class="btn danger" id="saveDisciplineBtn" style="margin-top:10px">Save disciplinary correction</button>
+  <p class="small muted">The server verifies the signed-in user's staff role. Every successful adjustment stores before/after values, staff ID, reason, and timestamp.</p>
+  <div class="row" style="margin-top:12px"><h3 style="margin:0">Disciplinary audit history</h3><button class="btn" id="refreshDisciplineLogBtn">Refresh history</button></div><div id="disciplineLog" class="small muted" style="margin-top:8px">Staff can load the audit history after the database migration is installed.</div>
+ </div>
+   <div class="card" id="divineAuthorityPanel" style="margin-top:12px;border:1px solid #8d7a45;display:none"><div class="row"><div><h3 style="margin:0">Divine Authority — Five Gods</h3><p class="small muted">Review divine trial applications and grant/revoke a God's official blessing for a player character.</p></div><span class="pill gold">GM ONLY</span></div><div class="inline" style="margin:12px 0"><button class="btn primary" id="refreshDivineBtn">Refresh divine applications</button></div><div id="divineApplicationQueue" class="small muted">Loading applications…</div><div class="divider"></div><h3>Manage a Blessing</h3><p class="small muted">Grant only after approval. Perks are recorded as official blessing grants in Supabase; configure gameplay effects in your Tower rules.</p><div class="grid2"><label class="small muted">Tower character<select class="field" id="blessingCharacter"><option value="">Load characters first</option></select></label><label class="small muted">God<select class="field" id="blessingGod"><option>Aurex</option><option>Selenyra</option><option>Morvane</option><option>Elyria</option><option>Vaelor</option></select></label></div><label class="small muted" style="display:block;margin-top:8px">Blessing / perk granted<input class="field" id="blessingPerk" placeholder="e.g. Ascension Through Battle"></label><label class="small muted" style="display:block;margin-top:8px">GM reason / trial reference<textarea class="field" id="blessingReason" rows="2" placeholder="Required: trial result or approval reference"></textarea></label><div class="inline" style="margin-top:10px"><button class="btn gold" id="grantBlessingBtn">Grant / Update Blessing</button><button class="btn danger" id="revokeBlessingBtn">Revoke Selected Blessing</button></div><div id="divineBlessingList" class="small muted" style="margin-top:12px">Blessings will appear here.</div></div>
+<div class="card" id="toaaAuthorityPanel" style="margin-top:12px;border:1px solid #b9a0ff;display:none"><div class="row"><div><div class="eyebrow">SUPREME ADMINISTRATION</div><h3 style="margin:4px 0">✦ Goddess TOAA Authority</h3><p class="small muted">GM/Admin only · grant Tower stats, weapons, abilities, or blessings to a selected character.</p></div><span class="pill gold">RESTRICTED</span></div><div class="grid2" style="margin-top:12px"><label class="small muted">Character<select id="toaaCharacter" class="field"><option value="">Load characters</option></select></label><label class="small muted">Grant type<select id="toaaType" class="field"><option value="stats">Stats</option><option value="weapon">Weapon</option><option value="ability">Ability</option><option value="blessing">Blessing</option></select></label></div><label class="small muted" style="display:block;margin-top:8px">Grant name<input id="toaaName" class="field" placeholder="e.g. Celestial Edge"></label><label class="small muted" style="display:block;margin-top:8px">Description / effect<textarea id="toaaDescription" class="field" rows="3" placeholder="Explain the grant and any limits, cost, or cooldown."></textarea></label><div id="toaaStatFields" class="grid2" style="margin-top:8px"><label class="small muted">Stat<select id="toaaStat" class="field"><option>STR</option><option>SPD</option><option>END</option><option>REF</option><option>DUR</option><option>AGI</option></select></label><label class="small muted">Amount<input id="toaaAmount" class="field" type="number" min="1" max="100000" value="10"></label></div><label class="small muted" style="display:block;margin-top:8px">Reason / approval reference<textarea id="toaaReason" class="field" rows="2" placeholder="Required audit reason"></textarea></label><div class="inline" style="margin-top:10px"><button class="btn gold" id="toaaGrantBtn">Grant to Character</button><button class="btn" id="toaaRefreshBtn">Refresh Grants</button></div><div id="toaaGrantList" class="small muted" style="margin-top:12px">Grant history appears here after migration is installed.</div><p class="small muted">Grants are saved as Tower entitlements. Stat grants update the selected character's Tower stats; weapon/ability/blessing grants are recorded and shown to players. Automatic combat activation requires a connected combat engine.</p></div>
+<div class="card" style="margin-top:12px"><div class="row"><div><h3 style="margin:0">GM Review Queue</h3><p class="small muted">Only profiles with the GM or admin role can review requests.</p></div><button class="btn" id="refreshQueueBtn">Refresh queue</button></div><div id="gmQueue" class="small muted" style="margin-top:10px">Sign in with an authorized GM account to view the queue.</div></div>
+ <div class="notice" style="margin-top:12px">Reward defaults in the SQL starter schema are placeholders: Normal = 100 EXP + 10 TP per floor; Easy = 0.75×, Hard = 1.5×, Extreme = 2×. Admins can edit the floor reward table before launch. Approval only grants rewards when the request is valid and the floor is the character's next sequential clear.</div>
+</section>
+</main></div>
+<nav class="bottomnav" id="bottomnav"><button data-view="overview" class="active"><b>⌂</b>Home</button><button data-view="floors"><b>♜</b>Floors</button><button data-view="bestiary"><b>♞</b>Bestiary</button><button data-view="record"><b>♙</b>Record</button><button data-view="player"><b>♟</b>Sign In</button><button data-view="shops"><b>◇</b>Shops</button><button data-view="gods"><b>✧</b>Gods</button><button data-view="gm" class="staff-only-nav" style="display:none"><b>⚖</b>GM</button></nav>
+<footer class="footer">ARCANE VERSE • THE TOWER <br> <span>The Tower remembers. Monster stat lab is a planning reference; official progression remains subject to authorized GM verification.</span></footer>
+</div>
+<script>
+const arcs=[
+{name:"The Awakening",start:1,end:10,theme:"Basic combat & Tower mechanics"},
+{name:"The Ascent",start:11,end:20,theme:"Advanced monsters & environmental hazards"},
+{name:"The Trials",start:21,end:30,theme:"Strategy and encounter mechanics"},
+{name:"The Bloodfall",start:31,end:40,theme:"Bleeding, hunting and execution"},
+{name:"The Abyssal Ascent",start:41,end:50,theme:"Void, souls and corruption"},
+{name:"The Distortion",start:51,end:60,theme:"Reality, time and spatial anomalies"},
+{name:"The Deathbound",start:61,end:70,theme:"Death Marks, undead and corruption"},
+{name:"The Otherworld",start:71,end:80,theme:"Cosmic and celestial threats"},
+{name:"The Ascendant Floors",start:81,end:90,theme:"Divine-level threats"},
+{name:"The Crown Ascent",start:91,end:99,theme:"Endgame encounters"},
+{name:"The Summit",start:100,end:100,theme:"Final Tower Trial"}];
+const names=[
+["Ironback Goblin","Pack Instinct","Goblins gain a combat bonus while three or more remain alive."],
+["Razorclaw Wolf","Predator's Mark","Marks one target; the pack prioritizes that target and deals increased damage."],
+["Cave Kobold","Tunnel Ambush","Uses the terrain to hide and launch surprise attacks."],
+["Venomtail Scorpion","Accumulating Venom","Each sting adds Poison stacks; high stacks temporarily reduce SPD."],
+["Ember Slime","Split","At low HP, divides into smaller slimes."],
+["Bonecrawler","Bone Reassembly","Rebuilds from its remains unless they are properly destroyed."],
+["Thornhide Boar","Charge","Repeated attacks build Rage; maximum Rage triggers a powerful charge."],
+["Shadow Bat","Darkness","The battlefield darkens and reduces visibility."],
+["Crystal Mantis","Reflective Carapace","Certain attacks are partially reflected toward their attacker."],
+["Gravemaw Ogre","Devour","Consumes defeated creatures to restore HP and temporarily increase stats."],
+["Bloodfang Hound","Blood Scent","Tracks targets below a set HP threshold more easily."],
+["Venom Kobold","Toxic Traps","Places concealed poison traps across the battlefield."],
+["Ironclaw Orc","Iron Skin","Reduces incoming damage until its armor is broken."],
+["Flamewing Harpy","Burning Feathers","Creates persistent patches of fire."],
+["Mire Serpent","Mire Field","Slows movement across selected battlefield zones."],
+["Warborn Goblin","Battle Formation","Nearby goblins gain defense when positioned together."],
+["Frosthide Troll","Frozen Regeneration","Regenerates rapidly until its body temperature is disrupted."],
+["Arcane Wraith","Mana Drain","Steals a portion of the target's available Tower resources."],
+["Blackhorn Minotaur","Labyrinth Hunter","The floor layout changes during the encounter."],
+["Iron Tyrant","Overdrive","At 50% HP, enters a second phase with increased SPD and STR."],
+["Mirror Spider","Mirror Web","Creates weaker copies of the player."],
+["Burrowing Maw","Underground Hunter","Burrows and attacks from unpredictable locations."],
+["Mana Leech","Mana Feast","Grows stronger whenever it drains magical energy."],
+["Thunder Beetle","Static Charge","Hits build electrical charge until an area attack is released."],
+["Mimic Knight","Adaptive Arsenal","Copies general properties of the player's equipped Tower weapon."],
+["Rotting Dryad","Withering Garden","Creates zones that gradually reduce END."],
+["Crystal Warden","Crystal Shield","Barriers protect its core until destroyed."],
+["Void Hound","Phase Step","Briefly becomes intangible."],
+["Twinblade Revenant","Perfect Rhythm","Alternates attack patterns; disrupting its rhythm briefly stuns it."],
+["Trialmaster","Three Trials","Requires overcoming three distinct combat mechanics before final defeat."],
+["Bloodstalker","Blood Mark","Successful hits build Blood Mark stacks on the target."],
+["Assassin Wraith","Execution Window","Deals major bonus damage to severely weakened targets."],
+["Crimson Revenant","Death Echo","Returns once after being defeated."],
+["War Hounds","Pack Execution","Hounds coordinate more tightly as their numbers decrease."],
+["Soul Eater","Soul Feast","Gains temporary power from defeated enemies."],
+["Executioner Golem","Execution Protocol","Charges a devastating attack when a target falls below a critical HP threshold."],
+["Bloodwing Gargoyle","Aerial Dominion","Remains airborne for most of the battle."],
+["Death Priest","Grave Blessing","Can resurrect defeated monsters once."],
+["Carnage Beast","Blood Frenzy","Every wound increases its offensive power."],
+["Red Executioner","Final Sentence","Marks one target as its primary execution target."],
+["Abyssal Spider","Void Web","Webs partially suppress Tower abilities."],
+["Hollow Knight","Empty Armor","Physical damage is reduced until its core is exposed."],
+["Nightmare Stag","Fear Aura","Forces players to resist supernatural fear."],
+["Blackfire Elemental","Blackfire","Flames damage HP and weaken defensive effects."],
+["Soulbound Giant","Soul Chain","Links to a target; some damage transfers between linked targets."],
+["Abyss Serpent","Abyssal Dive","Disappears into dimensional space temporarily."],
+["Dream Eater","Dream State","Creates false battlefield events and misleading sensory information."],
+["Void Angel","Null Wings","Suppresses selected abilities within its aura."],
+["Abyssal Champion","Abyssal Armor","Grows stronger when players repeatedly use the same attack."],
+["Abyssal Monarch","Abyssal Domain","The arena drains resources and becomes increasingly hostile."],
+["Faceless Wanderer","Identity Theft","Mimics a player's appearance and basic combat style temporarily."],
+["Reality Parasite","Reality Bite","Removes small battlefield elements at random."],
+["Distortion Wolf","Spatial Hunt","Teleports between locations during combat."],
+["Living Nightmare","Fear Manifestation","Grows stronger in response to fear-based reactions."],
+["Hollow Giant","Empty Core","Damage is reduced until its hidden core is discovered."],
+["Time-Eater","Time Theft","Temporarily slows a player's action tempo."],
+["Forgotten Dragon","Memory Loss","Makes some encounter information unreliable."],
+["Null Beast","Null Field","Suppresses selected Tower mechanics in a localized area."],
+["Reality Devourer","Assimilation","Copies one property from something it defeats."],
+["Distorted God","Broken Reality","The rules of the floor periodically change during battle."],
+["Deathmarked Hound","Death Sense","Becomes stronger against players carrying Death Marks."],
+["Corrupted Knight","Corrupted Weapon","Its attacks increase Corruption."],
+["Rotting Seraph","Fallen Radiance","Uses corrupted Holy abilities."],
+["Black Saint","False Sanctum","A false safe zone increases Corruption instead."],
+["Graveborn Giant","Grave Revival","Revives once after death."],
+["Blood Apostle","Sacrificial Rite","Sacrifices HP to greatly increase its abilities."],
+["Fallen Paladin","Broken Oath","Gains power against Holy-aligned abilities."],
+["Soul Butcher","Soul Rend","Temporarily reduces the effectiveness of defensive abilities."],
+["Corruption Beast","Corruption Spread","Nearby players gradually accumulate Corruption."],
+["Death Sovereign","Kingdom of Death","Death Marks become more dangerous inside its arena."],
+["Starborn Predator","Cosmic Tracking","Is difficult to hide from or evade."],
+["Celestial Devourer","Energy Feast","Absorbs selected energy-based attacks."],
+["Astral Kraken","Multiple Reality Limbs","Attacks several locations simultaneously."],
+["Moon Eater","Lunar Phases","Abilities change according to the artificial lunar cycle."],
+["Cosmic Leviathan","Gravity Tide","Periodically changes gravitational pressure."],
+["Void Seraph","Dimensional Wings","Opens temporary portals across the arena."],
+["Starforged Titan","Meteor Core","Launches devastating celestial impacts at intervals."],
+["Reality Dragon","Law Breath","Its breath temporarily changes one battlefield rule."],
+["World Eater","Consumption","Permanently removes sections of the battlefield during the encounter."],
+["Astral Emperor","Cosmic Dominion","Controls gravity, space and energy within its domain."],
+["Ancient Behemoth","Primordial Rage","Becomes stronger as its HP decreases."],
+["Eternal War Machine","Combat Adaptation","Learns from repeated attacks."],
+["Primordial Chimera","Multi-Aspect","Rotates between distinct elemental and physical forms."],
+["World Serpent","Constriction","Restricts movement and gradually drains END."],
+["Divine Devourer","Divine Consumption","Can consume temporary buffs."],
+["Immortal Titan","Undying Body","Requires solving its immortality mechanic before it can be defeated."],
+["Abyss Dragon","Abyssal Breath","Uses a major area attack that increases Corruption."],
+["Fallen God","Divine Ruin","Uses corrupted divine abilities."],
+["Tower Guardian","Perfect Defense","Adapts defenses to the player's strongest attack."],
+["The Ascendant","Ascension","Progresses through multiple combat forms."],
+["Forgotten Kings","Royal Command","Multiple bosses fight simultaneously."],
+["Eternal Hunter","Predator's Evolution","Adapts after each major attack used against it."],
+["Lawbreaker","Rule Severance","Temporarily disables one declared Tower mechanic."],
+["Endless Legion","Infinite Reinforcement","Enemies return until the Legion's source is destroyed."],
+["Nameless King","Identity Erasure","Temporarily suppresses certain title and identity bonuses."],
+["Shopkeeper's Guardian","Treasury Defense","Uses powerful weapons and items inspired by Tower Shops."],
+["Deathless One","Death Denial","Cannot be defeated through ordinary damage alone."],
+["Echo","Player Echo","Creates increasingly accurate copies of the player's Tower build."],
+["Gatekeeper","Final Gate","Combines mechanics drawn from earlier floors."],
+["The Final Adversary","The Tower Remembers","Manifests from the player's recorded journey: clears, deaths, abilities, equipment, corruption, divine allegiance, and failures."]
+];
+const bosses=new Set([10,20,30,40,50,60,70,80,90,91,92,93,94,95,96,97,98,99,100]);
+const floors=names.map((n,i)=>{let num=i+1,arc=arcs.find(a=>num>=a.start&&num<=a.end);return {n:num,name:n[0],mechanic:n[1],desc:n[2],arc:arc.name,range:`${arc.start}–${arc.end}`,theme:arc.theme,type:num===100?"Endgame":bosses.has(num)?"Boss":"Standard",milestone:[10,20,30,40,50,60,70,80,90,100].includes(num),objective:num===100?"Overcome the personalized Final Adversary and complete the Summit trial.":bosses.has(num)?"Defeat the boss and resolve its signature mechanic.":"Complete the encounter objective and survive the floor.",difficulty:"Easy / Normal / Hard / Extreme",reward:"EXP + Tower Points + eligible floor rewards (GM-verified)"}});
+const gods=[
+{name:"Aurex",title:"God of Ascension",domain:"Strength • Combat • Victory • Conquest",vassal:"Knight of Ascension",perk:"Ascension Through Battle",desc:"Grows through difficult victories and battle achievements.",bless:"Combat potential, battle instincts, strength-focused abilities, and momentum." ,icon:"⚔"},
+{name:"Selenyra",title:"Goddess of Fate",domain:"Fate • Luck • Probability • Choice",vassal:"Child of Fate",perk:"The Unlikely Path",desc:"Works with outcomes, chance, and paths that should not be possible.",bless:"Probability influence, fate-based abilities, and limited outcome alteration.",icon:"☾"},
+{name:"Morvane",title:"God of Death",domain:"Death • Souls • Sacrifice • Corruption",vassal:"Reaper of the Tower",perk:"The Reaper's Bargain",desc:"Rules over death, souls, sacrifice, and dangerous exchanges.",bless:"Soul interaction, death-related abilities, and conditional power from defeated enemies.",icon:"☠"},
+{name:"Elyria",title:"Goddess of the Sanctum",domain:"Holy Power • Protection • Healing • Purification",vassal:"Knight of Sanctum",perk:"Sanctified Soul",desc:"Counters Corruption and protects those who survive the ascent.",bless:"Healing, barriers, purification, Holy abilities, and Corruption resistance.",icon:"✧"},
+{name:"Vaelor",title:"God of Knowledge",domain:"Knowledge • Magic • Adaptation • Discovery",vassal:"Archivist of the Tower",perk:"The Grand Archive",desc:"Studies the Tower's systems and rewards discovery over brute force.",bless:"Mana analysis, enemy weakness detection, spell study, and adaptive understanding.",icon:"⌘"}
+];
+const rules=[
+["Entry & Registration","Registered Arcane Verse players enter with their existing character. First entry starts at Floor 1, Level 1, 0 EXP and 0 TP. One Tower record per character."],
+["Separate Progression","Tower stats, abilities, gear, EXP and TP are Tower-only. Normal Arcane Verse progression is not reduced or overwritten. Leaving pauses Tower progress; returning resumes it."],
+["Level & EXP","Suggested baseline: EXP required for the next level = current level × 100. Rewards must be defined by approved floor tables; level-ups may grant Tower stat points."],
+["Tower Points","TP is Tower currency for Tower shops and cannot be converted into normal Arcane Verse currency."],
+["Difficulty","Declare an available difficulty before the floor begins. Easier difficulty yields lower rewards; harder difficulty raises risk and rewards. No mid-floor changes unless a floor rule permits it."],
+["Floor Clear","A floor is cleared only when required objectives and mandatory mechanics are completed. Boss defeats and results require verification before being recorded as official."],
+["Shops & Ranks","Shops can offer Tower stats, potions, abilities, weapons and equipment. Rank labels and prices must be controlled by the official catalogue."],
+["Extraction","Only items marked [EXTRACTABLE] may leave the Tower. [TOWER-BOUND] items remain inside. Extraction may require a ticket, achievement, floor, or GM approval."],
+["Death & Respawn","Standard death uses the floor's checkpoint and penalty rules. Permanent death applies only where explicitly enabled and announced."],
+["PvP & Death Marks","PvP is allowed only where enabled. A qualifying player kill grants a Death Mark to the victim. Anti-farming rules and GM review apply."],
+["Corruption","Death Marks and special Tower events can increase Corruption. Corruption alters abilities and increases vulnerability to Holy power at higher stages. Purification requires an approved method."],
+["GM / WhatsApp Operations","Free floors use preset encounters; supervised floors need verification; major milestone floors use full GM oversight. Players submit results; GMs verify records and rewards."],
+["Five Gods & Vassals","Players may interact with all Five Gods but hold one true Vassal contract at a time. Vassalhood requires a divine trial, eligibility, and acceptance."],
+["Records & Integrity","Official stats, rewards, inventory, deaths, extraction, and clears cannot be self-certified. Authorized GMs/admins approve changes and preserve an audit log."]
+];
+const items=[
+{name:"Field Ration Pack",cat:"Consumables",rank:"E",price:15,desc:"Simple supplies for a long ascent; no combat bonus.",extract:"Tower-bound",requiredLevel:1,requiredFloor:0},
+{name:"Minor Vitality Draught",cat:"Consumables",rank:"E",price:25,desc:"A modest restorative used between encounters when floor rules permit.",extract:"Tower-bound",requiredLevel:1,requiredFloor:0},
+{name:"Antidote Vial",cat:"Consumables",rank:"E",price:30,desc:"Reduces one ordinary poison effect; cannot negate boss mechanics automatically.",extract:"Tower-bound",requiredLevel:1,requiredFloor:0},
+{name:"Wayfarer's Edge",cat:"Weapons",rank:"D",price:60,desc:"A dependable starter blade with balanced handling.",extract:"Tower-bound",requiredLevel:1,requiredFloor:0},
+{name:"Warden's Buckler",cat:"Armor",rank:"D",price:75,desc:"A compact shield designed to blunt a single frontal strike.",extract:"Tower-bound",requiredLevel:1,requiredFloor:0},
+{name:"Trailrunner Boots",cat:"Armor",rank:"D",price:90,desc:"Light boots that support quick repositioning on ordinary terrain.",extract:"Tower-bound",requiredLevel:2,requiredFloor:1},
+{name:"Mana Thread",cat:"Abilities",rank:"D",price:100,desc:"A basic technique for shaping a small, precise thread of Tower energy.",extract:"Tower-bound",requiredLevel:2,requiredFloor:1},
+{name:"Whetstone Kit",cat:"Consumables",rank:"D",price:40,desc:"A one-use maintenance kit for a weapon between encounters.",extract:"Tower-bound",requiredLevel:2,requiredFloor:1},
+{name:"Aetherguard Mantle",cat:"Armor",rank:"C",price:150,desc:"A light mantle that offers modest protection without sacrificing mobility.",extract:"Tower-bound",requiredLevel:3,requiredFloor:2},
+{name:"Stunbreak Charm",cat:"Consumables",rank:"C",price:125,desc:"Once per encounter, helps a character recover from a minor stagger.",extract:"Tower-bound",requiredLevel:3,requiredFloor:3},
+{name:"Starlit Arrow Bundle",cat:"Weapons",rank:"C",price:135,desc:"Special arrows that glow near concealed Tower targets; ammunition is limited.",extract:"Tower-bound",requiredLevel:3,requiredFloor:3},
+{name:"Aegis Pulse",cat:"Abilities",rank:"C",price:220,desc:"Creates a brief, small protective pulse; does not ignore boss damage rules.",extract:"Tower-bound",requiredLevel:5,requiredFloor:5},
+{name:"Stormglass Spear",cat:"Weapons",rank:"B",price:420,desc:"A reach weapon that stores a minor static charge after a clean parry.",extract:"Tower-bound",requiredLevel:8,requiredFloor:8},
+{name:"Bastion Weave",cat:"Armor",rank:"B",price:460,desc:"Layered armor designed to reduce the impact of one heavy blow.",extract:"Tower-bound",requiredLevel:8,requiredFloor:10},
+{name:"Quickstep Sigil",cat:"Abilities",rank:"B",price:500,desc:"A short burst of movement with a clear cooldown and no teleportation effect.",extract:"Tower-bound",requiredLevel:10,requiredFloor:10},
+{name:"Greater Vitality Draught",cat:"Consumables",rank:"B",price:180,desc:"A stronger restorative for mid-ascent encounters; subject to item-use limits.",extract:"Tower-bound",requiredLevel:10,requiredFloor:10},
+{name:"Moonlit Repeater",cat:"Weapons",rank:"A",price:1100,desc:"A precision ranged weapon that rewards careful aim and deliberate timing.",extract:"Tower-bound",requiredLevel:18,requiredFloor:20},
+{name:"Runic Bulwark Armor",cat:"Armor",rank:"A",price:1350,desc:"A rune-reinforced set with improved resistance to repeated impacts.",extract:"Tower-bound",requiredLevel:20,requiredFloor:20},
+{name:"Counterspell Lattice",cat:"Abilities",rank:"A",price:1500,desc:"Disrupts one eligible incoming technique when timed correctly; not a universal nullification.",extract:"Tower-bound",requiredLevel:22,requiredFloor:25},
+{name:"Phoenix Reserve Draught",cat:"Consumables",rank:"A",price:650,desc:"A rare emergency restorative with a strict once-per-floor limit.",extract:"Tower-bound",requiredLevel:25,requiredFloor:30},
+{name:"S-Rank: Starfall Edge",cat:"Weapons",rank:"S",price:5000,desc:"A legendary blade that releases a focused starburst after a fully committed strike. High cost and advanced access required.",extract:"GM approval for extraction",requiredLevel:40,requiredFloor:40},
+{name:"S-Rank: Celestial Aegis",cat:"Armor",rank:"S",price:5600,desc:"A divine-grade defensive mantle that strengthens a timed guard; it does not grant invulnerability.",extract:"GM approval for extraction",requiredLevel:45,requiredFloor:50},
+{name:"S-Rank: Astral Severance",cat:"Abilities",rank:"S",price:6200,desc:"A high-tier technique that cuts through one eligible energy construct after a visible wind-up.",extract:"Tower-bound",requiredLevel:50,requiredFloor:50},
+{name:"S-Rank: Sovereign's Reprieve",cat:"Consumables",rank:"S",price:4500,desc:"A single-use emergency recovery item with GM-defined limits; cannot reverse permanent death.",extract:"Tower-bound",requiredLevel:55,requiredFloor:60},
+{name:"S-Rank: Riftwalker Greaves",cat:"Armor",rank:"S",price:6800,desc:"Legendary greaves that improve controlled movement across unstable terrain, not unrestricted teleportation.",extract:"GM approval for extraction",requiredLevel:60,requiredFloor:70},
+{name:"S-Rank: Crown of the First Flame",cat:"Abilities",rank:"S",price:8500,desc:"A prestigious high-ascent ability focused on a single controlled burst of flame; strong cooldown and encounter rules apply.",extract:"Tower-bound",requiredLevel:70,requiredFloor:80}
+];
+const achievements=[
+["First Step","Enter the Tower and register a player record.","Registration"],
+["First Clear","Clear Floor 1 and receive GM verification.","Floor 1"],
+["Bossbreaker","Defeat a milestone boss.","Milestones"],
+["Tenfold Ascent","Clear Floor 10.","Floor 10"],
+["Abyss Walker","Clear Floor 50.","Floor 50"],
+["Deathbound Survivor","Clear Floor 70.","Floor 70"],
+["Crown Seeker","Clear Floor 99.","Floor 99"],
+["Tower Conqueror","Clear Floor 100 and complete the Summit trial.","Floor 100"],
+["Divine Chosen","Become an accepted Vassal of one of the Five Gods.","Divine"],
+["Unmarked","Complete a major milestone without receiving a Death Mark.","Special"]
+];
+const defaultRecord={playerName:"",characterName:"",realmRank:"",race:"",level:1,exp:0,tp:0,currentFloor:1,highest:0,deaths:0,victories:0,stats:{STR:0,SPD:0,END:0,REF:0,DUR:0,AGI:0},statPoints:0,statAllocationMethod:"",deathMarks:0,corruption:0,god:"",vassal:"",inventory:[],log:["Tower record initialized. Progression begins at Floor 1, Level 1."],cleared:[],achievements:[]};
+let avCloudSummary=null;
+let record=loadRecord(),shopCategory="All",selectedFloor=1;
+function loadRecord(){try{const saved=JSON.parse(localStorage.getItem("avTowerRecord")||"{}");return {...structuredClone(defaultRecord),...saved,stats:{...defaultRecord.stats,...(saved.stats||{})},log:Array.isArray(saved.log)?saved.log:structuredClone(defaultRecord.log)}}catch(e){return structuredClone(defaultRecord)}}
+function saveRecord(){localStorage.setItem("avTowerRecord",JSON.stringify(record));renderRecord();toast("Tower record saved on this device.");}
+function toast(msg){let t=document.createElement("div");t.className="toast";t.textContent=msg;document.body.append(t);setTimeout(()=>t.remove(),2200)}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function navigate(view){document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id==="view-"+view));document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===view));window.scrollTo({top:0,behavior:"smooth"});if(view==="record")renderRecord();if(view==="progression")avRun(avLoadProgression);if(view==="floors")renderFloors();if(view==="bestiary")renderBestiary();if(view==="gm"&&!(["gm","admin"].includes(avRole()))){toast("GM permission required.");navigate("player");}}
+document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>navigate(b.dataset.view)));
+arcs.forEach(a=>{document.querySelector("#arcFilter").insertAdjacentHTML("beforeend",`<option value="${esc(a.name)}">${esc(a.start)}–${esc(a.end)} · ${esc(a.name)}</option>`);document.querySelector("#beastArc").insertAdjacentHTML("beforeend",`<option value="${esc(a.name)}">${esc(a.name)}</option>`)});
+function renderFloors(){let q=(document.querySelector("#floorSearch").value||"").toLowerCase(),arc=document.querySelector("#arcFilter").value,type=document.querySelector("#typeFilter").value;let filtered=floors.filter(f=>(!q||`${f.n} ${f.name} ${f.mechanic} ${f.desc} ${f.arc}`.toLowerCase().includes(q))&&(arc==="all"||f.arc===arc)&&(type==="all"||f.type===type));document.querySelector("#floorGrid").innerHTML=filtered.map(f=>`<button class="floorbtn ${f.type==="Boss"||f.type==="Endgame"?"boss":""} ${record.cleared.includes(f.n)?"cleared":""} ${selectedFloor===f.n?"selected":""}" onclick="selectFloor(${f.n})"><strong>${String(f.n).padStart(2,"0")} ${record.cleared.includes(f.n)?"✓":""}</strong><span>${esc(f.name)}</span></button>`).join("")||'<div class="empty">No floors match that search.</div>';renderFloorDetail()}
+function selectFloor(n){selectedFloor=n;renderFloors();document.querySelector("#floorDetail").scrollIntoView({behavior:"smooth",block:"nearest"})}
+function renderFloorDetail(){let f=floors.find(x=>x.n===selectedFloor)||floors[0];document.querySelector("#floorDetail").innerHTML=`<div class="row"><div class="eyebrow">Floor ${String(f.n).padStart(2,"0")} · ${esc(f.arc)}</div><span class="pill ${f.type!=="Standard"?"gold":""}">${f.type}${f.milestone?" · Milestone":""}</span></div><h3>${esc(f.name)}</h3><div class="pills"><span class="pill">${esc(f.range)}</span><span class="pill">${esc(f.theme)}</span><span class="pill">Difficulty: ${esc(f.difficulty)}</span></div><div class="mechanic"><strong>Signature mechanic — ${esc(f.mechanic)}</strong><div class="small" style="margin-top:4px">${esc(f.desc)}</div></div><div class="grid2"><div><div class="tiny">Objective</div><p>${esc(f.objective)}</p></div><div><div class="tiny">Clear reward category</div><p>${esc(f.reward)}</p></div></div><div class="inline"><button class="btn primary" onclick="openClearSubmission(${f.n})">Submit clear for GM review</button><button class="btn" onclick="record.currentFloor=${f.n};saveRecord()">Set as current floor</button></div><p class="small muted">Submit encounter evidence for review. A GM-approved clear updates the official cloud record and reward history.</p>`}
+function monsterStats(f,difficulty){
+ const mult=({Easy:.5,Normal:1,Hard:2,Extreme:4})[difficulty]||1;
+ // Floor 1 budget is 120. Budget rises smoothly to 6x by Floor 100.
+ const scale=1+((f.n-1)/99)*5;
+ const base=[20,30,20,25,25].map(v=>Math.round(v*scale));
+ const stats=base.map(v=>Math.ceil(v*mult));
+ return {base,stats,mult,total:stats.reduce((a,b)=>a+b,0),baseTotal:base.reduce((a,b)=>a+b,0)};
+}
+function monsterKit(f){
+ const forms=[
+  {p:"Predator’s Instinct",pd:"Tracks isolated or weakened targets; breaking line of sight or regrouping limits its advantage.",a:"Rending Lunge",ad:"A telegraphed close-range strike that can be sidestepped or interrupted.",b:"Territorial Pulse",bd:"A short-range pressure wave; guarding or moving beyond the marked radius counters it."},
+  {p:"Adaptive Carapace",pd:"After repeated attacks of one type, braces against the next similar hit; varied tactics bypass the adaptation.",a:"Crushing Advance",ad:"A committed forward assault that punishes stationary targets and leaves a recovery window.",b:"Fracture Burst",bd:"Cracks the ground in a visible line, forcing the challenger to reposition before impact."},
+  {p:"Gloam Resonance",pd:"Gains concealment in dim terrain; bright exposure reveals movement cues and weak points.",a:"Umbral Feint",ad:"Creates a false approach before striking from a telegraphed alternate angle.",b:"Dusk Snare",bd:"Marks a temporary hazard zone that slows anyone remaining inside it."},
+  {p:"Rift-Touched Core",pd:"The arena briefly distorts around the creature; stable terrain and timing reduce the effect.",a:"Rift Lance",ad:"Fires a narrow charged attack along a visible line.",b:"Spatial Rupture",bd:"Marks a delayed blast area, rewarding movement and timing."},
+  {p:"Runic Feedback",pd:"Repeated use of the same tactic leaves a trace the monster can exploit; changing the approach resets its read.",a:"Glyph Breaker",ad:"Targets a defensive stance with a slow, interruptible rune-charged blow.",b:"Sigil Cascade",bd:"Places three sequential marks that detonate in order; moving after each cue avoids the chain."},
+  {p:"Gravebound Tenacity",pd:"Recovers composure when left unpressured, but sustained coordinated pressure prevents its reset.",a:"Sepulchral Hook",ad:"Pulls toward a marked lane; breaking the line or bracing prevents displacement.",b:"Mourning Field",bd:"Creates a decaying zone that punishes prolonged stationary combat."},
+  {p:"Stormglass Nerves",pd:"Builds charge when struck by fast consecutive attacks; pauses and guarded exchanges bleed the charge off.",a:"Arcflash Pounce",ad:"Dashes through a clearly telegraphed lane and shocks targets caught in it.",b:"Grounding Break",bd:"Discharges stored energy around its feet; ranged pressure or retreat counters the burst."},
+  {p:"Hollow Reflection",pd:"Mirrors the rhythm, not the full power, of a repeated move; feints and altered timing defeat the pattern.",a:"Echo Counter",ad:"Punishes an overcommitted attack after a visible guard pose.",b:"False Double",bd:"Projects decoys; only one casts a consistent shadow or produces a true impact cue."},
+  {p:"Crown of Pressure",pd:"Its aura grows stronger while challengers cluster; spreading out weakens its area control.",a:"Sovereign Impact",ad:"A heavy overhead attack with a long wind-up and a narrow safe angle.",b:"Command Seal",bd:"Marks one combat lane as dangerous for a short duration, forcing a route change."},
+  {p:"Worldscar Instability",pd:"The battlefield changes in response to its signature mechanic; observing the arena reveals a safe counter-window.",a:"Cataclysm Vector",ad:"Charges a floor-specific line attack whose tell matches its signature phenomenon.",b:"Lasting Rupture",bd:"Leaves a persistent terrain hazard that can be baited away from the main combat space."}
+ ];
+ const fidx=(f.n-1)%forms.length, k=forms[fidx], monster=f.name;
+ const unique=`${monster} ${f.mechanic}`;
+ return {passive:`${monster} — ${k.p}`,passiveDesc:`${k.pd} Encounter link: ${f.desc}`,active1:`${unique} · ${k.a}`,active1Desc:`${k.ad} Its use is shaped by ${f.mechanic.toLowerCase()}.`,active2:`${unique} · ${k.b}`,active2Desc:`${k.bd} Counterplay should address ${f.mechanic.toLowerCase()} rather than repeating the same response each floor.`,signature:f.mechanic,signatureDesc:f.desc};
+}
+function renderBestiary(){let q=(document.querySelector("#beastSearch").value||"").toLowerCase(),a=document.querySelector("#beastArc").value,d=document.querySelector("#beastDifficulty")?.value||"Normal";let fs=floors.filter(f=>(!q||`${f.name} ${f.mechanic} ${f.desc} ${f.arc}`.toLowerCase().includes(q))&&(a==="all"||f.arc===a));document.querySelector("#beastGrid").innerHTML=fs.map(f=>{const m=monsterStats(f,d),k=monsterKit(f);return `<article class="card"><div class="row"><span class="tiny">Floor ${String(f.n).padStart(2,"0")} · ${esc(f.arc)}</span><span class="pill ${f.type!=="Standard"?"gold":""}">${esc(f.type)}${f.milestone?" · Milestone":""}</span></div><h3>${esc(f.name)}</h3><div class="pills"><span class="pill">${d} · ${m.mult}×</span><span class="pill">Base budget ${m.baseTotal}</span><span class="pill gold">Scaled total ${m.total}</span></div><div class="grid2" style="margin-top:10px">${["STR","SPD","END","REF","DUR"].map((x,i)=>`<div class="card" style="padding:9px"><div class="tiny">${x}</div><strong>${m.stats[i]}</strong><div class="tiny muted">Base ${m.base[i]}</div></div>`).join("")}</div><div class="mechanic" style="margin-top:10px"><strong>Passive — ${esc(k.passive)}</strong><p class="small muted">${esc(k.passiveDesc)}</p></div><p><strong>Active 1 — ${esc(k.active1)}</strong><br><span class="small muted">${esc(k.active1Desc)}</span></p><p><strong>Active 2 — ${esc(k.active2)}</strong><br><span class="small muted">${esc(k.active2Desc)}</span></p><div class="mechanic"><strong>Signature mechanic — ${esc(k.signature)}</strong><p class="small muted">${esc(k.signatureDesc)}</p></div><button class="btn" onclick="selectFloor(${f.n});navigate('floors')">View floor →</button></article>`}).join("")||'<div class="empty">No beasts found.</div>'}
+
+function renderStatStrings(stats){
+ const keys=["STR","SPD","END","REF","DUR","AGI"],labels={STR:"Strength",SPD:"Speed",END:"Endurance",REF:"Reflexes",DUR:"Durability",AGI:"Agility"};
+ const colors={STR:"#ff647c",SPD:"#54d9ff",END:"#ffbd59",REF:"#bd8cff",DUR:"#73f0bd",AGI:"#fff07a"};
+ const values=keys.map(k=>Math.max(0,Number(stats?.[k])||0)),max=Math.max(10,...values),cx=210,cy=195,r=127;
+ // Slightly offset the six spokes instead of evenly spacing them into three merged diameters.
+ const angles=[-91,-24,39,101,164,224].map(d=>d*Math.PI/180);
+ const pts=keys.map((k,i)=>{const a=angles[i],v=values[i],rr=48+(v/max)*82;return {k,v,a,x:cx+Math.cos(a)*rr,y:cy+Math.sin(a)*rr,ax:cx+Math.cos(a)*r,ay:cy+Math.sin(a)*r,lx:cx+Math.cos(a)*157,ly:cy+Math.sin(a)*157,sw:2.2+(v/max)*10.8};});
+ const ring=scale=>keys.map((k,i)=>`${i?'L':'M'} ${cx+Math.cos(angles[i])*r*scale} ${cy+Math.sin(angles[i])*r*scale}`).join(' ')+' Z';
+ let svg=`<svg viewBox="0 0 420 390" role="img" aria-label="Six attribute strings. Each string grows thicker as its stat increases."><defs>
+ <radialGradient id="stringCore"><stop stop-color="var(--accent)" stop-opacity=".2"/><stop offset="1" stop-color="var(--accent)" stop-opacity="0"/></radialGradient>
+ <filter id="stringGlow" x="-90%" y="-90%" width="280%" height="280%"><feGaussianBlur stdDeviation="3.2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ </defs><circle cx="${cx}" cy="${cy}" r="166" fill="url(#stringCore)"/>`;
+ for(let i=1;i<=5;i++)svg+=`<path d="${ring(i/5)}" fill="none" stroke="var(--line)" stroke-width="1" opacity=".85"/>`;
+ pts.forEach(p=>svg+=`<line x1="${cx}" y1="${cy}" x2="${p.ax}" y2="${p.ay}" stroke="var(--line)" stroke-width="1" stroke-dasharray="3 5" opacity=".8"/>`);
+ // Glow underlay + bright core make weight differences visible on mobile.
+ pts.forEach(p=>svg+=`<line x1="${cx}" y1="${cy}" x2="${p.x}" y2="${p.y}" stroke="${colors[p.k]}" stroke-width="${p.sw*1.8}" stroke-linecap="round" opacity=".22" filter="url(#stringGlow)"/>`);
+ pts.forEach(p=>svg+=`<line x1="${cx}" y1="${cy}" x2="${p.x}" y2="${p.y}" stroke="${colors[p.k]}" stroke-width="${p.sw}" stroke-linecap="round" opacity=".98" filter="url(#stringGlow)"/>`);
+ pts.forEach(p=>svg+=`<circle cx="${p.x}" cy="${p.y}" r="${Math.max(3.5,p.sw*.42)}" fill="${colors[p.k]}" stroke="#ffffff" stroke-opacity=".55" stroke-width="1"/>`);
+ svg+=`<circle cx="${cx}" cy="${cy}" r="15" fill="var(--panel2)" stroke="var(--accent)" stroke-width="2.5"/><circle cx="${cx}" cy="${cy}" r="4.5" fill="var(--accent)"/>`;
+ pts.forEach(p=>{svg+=`<text x="${p.lx}" y="${p.ly}" fill="var(--text)" font-size="12" font-weight="850" text-anchor="middle" dominant-baseline="middle" stroke="var(--bg)" stroke-width="3.4" paint-order="stroke">${p.k}</text>`});
+ svg+='</svg>';
+ const display=document.getElementById("statStringDisplay"),legend=document.getElementById("statStringLegend");
+ if(display)display.innerHTML=svg;
+ if(legend)legend.innerHTML=keys.map(k=>{const v=Math.max(0,Number(stats?.[k])||0),sw=2.2+(v/max)*10.8;return `<div class="stat-string-key"><span class="sample" style="--string-color:${colors[k]};height:${sw}px"></span><div><strong>${labels[k]}</strong><small>${v} points</small></div></div>`}).join("");
+}
+function renderRecord(){const setup=document.querySelector("#firstEntrySetup");if(setup)setup.classList.toggle("hidden",!!record.statAllocationMethod);document.querySelector("#playerName").value=record.playerName||"";document.querySelector("#characterName").value=record.characterName||"";document.querySelector("#realmRank").value=record.realmRank||"";document.querySelector("#race").value=record.race||"";document.querySelector("#recLevel").textContent=record.level;document.querySelector("#recFloor").textContent=record.currentFloor;document.querySelector("#recHighest").textContent=record.highest;document.querySelector("#recExp").textContent=`${record.exp} / ${record.level*100}`;document.querySelector("#recTP").textContent=record.tp;document.querySelector("#recDeaths").textContent=`${record.deaths} / ${record.victories}`;document.querySelector("#deathMarks").textContent=record.deathMarks;document.querySelector("#corruptionText").textContent=record.corruption+"%";document.querySelector("#corruptionBar").style.width=record.corruption+"%";let stage=record.corruption===100?"FALLEN":record.corruption>=81?"Abyss-Touched":record.corruption>=61?"Forsaken":record.corruption>=41?"Depraved":record.corruption>=21?"Corrupted":record.corruption>0?"Tainted":"Uncorrupted";document.querySelector("#corruptionStage").textContent=stage;document.querySelector("#chosenGod").textContent=record.god||"None";document.querySelector("#vassalTitle").textContent=record.vassal||"None";document.querySelector("#statPointsLabel").textContent="Unspent stat points: "+Number(avCloudSummary?.record?.stat_points??record.statPoints)||0;document.querySelector("#towerStats").innerHTML=Object.entries(record.stats).map(([k,v])=>`<div class="record-stat"><span>${k}</span><strong>${v}</strong></div>`).join("");renderStatStrings(record.stats);document.querySelector("#recordLog").innerHTML=(record.log||[]).slice(0,12).map(x=>`<div style="padding:7px 0;border-bottom:1px solid #233553">◈ ${esc(x)}</div>`).join("");document.querySelector("#topLevel").textContent=record.level;document.querySelector("#topExp").textContent=`${record.exp} / ${record.level*100} EXP`;document.querySelector("#topTP").textContent=record.tp;document.querySelector("#profileBtn").textContent=record.playerName?`♙ ${record.playerName}`:"♙ Player Sign In";avApplyCloudSummary()}
+function avApplyCloudSummary(){
+ const s=avCloudSummary;if(!s||!s.record)return;
+ const r=s.record,level=Math.max(1,Number(r.level)||1),exp=Math.max(0,Number(r.exp)||0),need=level*100,tp=Math.max(0,Number(r.tp)||0),floor=Math.max(1,Number(r.current_floor)||1),highest=Math.max(0,Number(r.highest_floor)||0);
+ const put=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=String(value)};
+ put('topLevel',level);put('topExp',`${exp} / ${need} EXP`);put('topTP',tp);
+ put('recLevel',level);put('recFloor',floor);put('recHighest',highest);put('recExp',`${exp} / ${need}`);put('recTP',tp);
+ put('statusCharacterName',s.name||'Tower Challenger');put('statusRank',`Tower Level ${level}`);put('statusFloor',`Current Floor ${floor===101?'Cleared':floor}`);put('statusSync','Cloud record synced');
+ const levelEl=document.getElementById('topLevel');if(levelEl)levelEl.title=`Official cloud progression · ${s.name||'Tower character'}`;
+ const expEl=document.getElementById('topExp');if(expEl)expEl.title=`Official cloud progression · ${s.name||'Tower character'}`;
+ const recLevelEl=document.getElementById('recLevel');if(recLevelEl)recLevelEl.title=`Official cloud progression · ${s.name||'Tower character'}`;
+}
+function renderGods(){document.querySelector("#godsGrid").innerHTML=gods.map(g=>`<article class="card godcard"><div class="row"><div class="godicon">${g.icon}</div><span class="pill gold">DIVINE</span></div><h3 style="margin-top:12px">${g.name}</h3><div class="muted small">${g.title}</div><p><strong style="color:var(--gold)">Domain</strong><br>${g.domain}</p><p>${g.desc}</p><p><strong>Possible blessings</strong><br>${g.bless}</p><div class="divider"></div><p><strong>Vassal title:</strong> ${g.vassal}<br><strong>Vassal perk:</strong> ${g.perk}</p></article>`).join("")}
+function renderRules(){document.querySelector("#rulesGrid").innerHTML=rules.map((r,i)=>`<article class="card"><div class="tiny">Rule ${String(i+1).padStart(2,"0")}</div><h3>${esc(r[0])}</h3><p class="muted small">${esc(r[1])}</p></article>`).join("");document.querySelector("#achievementGrid").innerHTML=achievements.map(a=>`<article class="card"><div class="row"><span class="godicon">♕</span><span class="pill">${esc(a[2])}</span></div><h3>${esc(a[0])}</h3><p class="muted small">${esc(a[1])}</p><span class="pill ${record.achievements.includes(a[0])?"gold":""}">${record.achievements.includes(a[0])?"Recorded":"Not yet recorded"}</span></article>`).join("")}
+function renderShop(){
+ const q=(document.querySelector("#shopSearch")?.value||"").trim().toLowerCase();
+ const sort=document.querySelector("#shopSort")?.value||"recommended";
+ let filtered=items.filter(x=>{
+  const categoryMatch=shopCategory==="All"||(shopCategory==="S-Rank"?x.rank==="S":x.cat===shopCategory);
+  return categoryMatch&&(!q||`${x.name} ${x.cat} ${x.rank} ${x.desc}`.toLowerCase().includes(q));
+ });
+ const rankOrder={E:0,D:1,C:2,B:3,A:4,S:5};
+ if(sort==="priceAsc")filtered.sort((a,b)=>a.price-b.price);
+ if(sort==="priceDesc")filtered.sort((a,b)=>b.price-a.price);
+ if(sort==="rankDesc")filtered.sort((a,b)=>(rankOrder[b.rank]||0)-(rankOrder[a.rank]||0)||a.price-b.price);
+ const level=Number(avCloudSummary?.record?.level??record.level)||1;
+ const highest=Number(avCloudSummary?.record?.highest_floor??record.highest)||0;
+ const tp=Number(avCloudSummary?.record?.tp??record.tp)||0;
+ const setText=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=String(v)};
+ setText("shopPlayerLevel",level);setText("shopPlayerFloor",highest);setText("shopPlayerTP",tp.toLocaleString());
+ document.querySelector("#shopGrid").innerHTML=filtered.map(x=>{
+  const unlocked=level>=x.requiredLevel&&highest>=x.requiredFloor;
+  const affordable=tp>=x.price;
+  const rankClass=x.rank==="S"?"pill red":x.rank==="A"?"pill gold":"pill";
+  const req=`Level ${x.requiredLevel} · Floor ${x.requiredFloor}+`;
+  const reason=!unlocked?`Unlock at ${req}`:!affordable?"Not enough Tower Points":"Requirements met";
+  const safeName=esc(x.name).replace(/'/g,"&#39;");
+  return `<article class="card shop-item ${x.rank==='S'?'shop-legendary':''}"><div class="row"><span class="pill">${esc(x.cat)}</span><span class="${rankClass}">Rank ${esc(x.rank)}</span></div><h3>${esc(x.name)}</h3><p class="muted small">${esc(x.desc)}</p><div class="pills"><span class="pill">${req}</span><span class="pill">${esc(x.extract)}</span></div><div class="row" style="margin-top:12px"><strong style="color:var(--gold)">${x.price.toLocaleString()} TP</strong><span class="small muted">${reason}</span></div><button class="btn" style="margin-top:12px;width:100%" disabled title="Cloud shop purchase RPC is not present in this source">${!unlocked?'Locked':!affordable?'Insufficient TP':'Cloud purchase unavailable'}</button></article>`;
+ }).join("")||'<div class="empty">No shop items match your search.</div>';
+ document.querySelector("#inventoryList").innerHTML=record.inventory.length?record.inventory.map(x=>`<div class="row" style="padding:8px 0;border-bottom:1px solid #233553"><span>${esc(x.name)} <span class="muted">· ${esc(x.rank)}</span></span><span class="pill">${esc(x.status)}</span></div>`).join(""):'<div class="empty">Inventory will display here when connected to the cloud shop.</div>';
+}
+async function buyItem(){toast("Cloud shop purchasing is intentionally disabled until the server-side purchase RPC is verified. No TP was deducted.");}
+document.querySelector("#floorSearch").addEventListener("input",renderFloors);document.querySelector("#arcFilter").addEventListener("change",renderFloors);document.querySelector("#typeFilter").addEventListener("change",renderFloors);document.querySelector("#beastSearch").addEventListener("input",renderBestiary);document.querySelector("#beastArc").addEventListener("change",renderBestiary);document.querySelector("#beastDifficulty")?.addEventListener("change",renderBestiary);
+document.querySelector("#updateIdentity").addEventListener("click",()=>{["playerName","characterName","realmRank","race"].forEach(id=>record[id]=document.querySelector("#"+id).value.trim());record.log.unshift("Player identity display fields updated on this device.");saveRecord()});
+document.querySelector("#saveBtn").addEventListener("click",saveRecord);
+document.querySelector("#profileBtn").addEventListener("click",()=>navigate("player"));
+document.querySelector("#buyStat").addEventListener("click",()=>avRun(async()=>{
+ if(!avSession)throw new Error("Sign in before spending official stat points.");
+ const character_id=document.getElementById("cloudStatsCharacter")?.value;
+ const stat=document.getElementById("statSelect").value;
+ if(!character_id)throw new Error("Choose a registered Tower character in the Cloud Tower Stats panel first.");
+ const {error}=await avClient().rpc("spend_tower_stat_point",{p_character_id:character_id,p_stat:stat});
+ if(error)throw new Error("Could not spend the cloud stat point. Confirm the Tower stat-points migration and database permissions are installed.");
+ await avLoadCloudTowerStats();await avLoadRecords();toast(`1 stat point spent on ${stat}.`);
+}));
+const startingStatNames=["STR","SPD","END","REF","DUR","AGI"];let pendingBuild={STR:0,SPD:0,END:0,REF:0,DUR:0,AGI:0};
+function renderManualBuild(){const used=Object.values(pendingBuild).reduce((a,b)=>a+b,0),left=100-used;document.querySelector("#manualPointsRemaining").textContent=`${left} points left`;document.querySelector("#confirmManualBuild").disabled=left!==0;document.querySelector("#manualStatRows").innerHTML=startingStatNames.map(k=>`<div class="record-stat"><div class="row"><strong>${k}</strong><strong>${pendingBuild[k]}</strong></div><div class="inline" style="margin-top:8px"><button class="btn" data-stat-down="${k}" ${pendingBuild[k]===0?"disabled":""} aria-label="Decrease ${k}">−</button><button class="btn" data-stat-up="${k}" ${left===0?"disabled":""} aria-label="Increase ${k}">+</button></div></div>`).join("");document.querySelectorAll("[data-stat-down]").forEach(b=>b.addEventListener("click",()=>{pendingBuild[b.dataset.statDown]=Math.max(0,pendingBuild[b.dataset.statDown]-1);renderManualBuild()}));document.querySelectorAll("[data-stat-up]").forEach(b=>b.addEventListener("click",()=>{if(Object.values(pendingBuild).reduce((a,b)=>a+b,0)<100)pendingBuild[b.dataset.statUp]++;renderManualBuild()}));}
+document.querySelector("#manualBuildBtn")?.addEventListener("click",()=>{pendingBuild={STR:0,SPD:0,END:0,REF:0,DUR:0,AGI:0};document.querySelector("#manualBuildPanel").classList.remove("hidden");renderManualBuild()});
+document.querySelector("#balancedBuildBtn")?.addEventListener("click",()=>{if(record.statAllocationMethod)return;record.stats={STR:17,SPD:17,END:17,REF:17,DUR:16,AGI:16};record.statPoints=0;record.statAllocationMethod="balanced";record.log.unshift("First-entry Tower build confirmed: Balanced Build (100 starting stat points; STR 17, SPD 17, END 17, REF 17, DUR 16, AGI 16).");saveRecord();toast("Balanced Tower build saved.")});
+document.querySelector("#confirmManualBuild")?.addEventListener("click",()=>{const total=Object.values(pendingBuild).reduce((a,b)=>a+b,0);if(total!==100){toast("Allocate all 100 points before confirming.");return}record.stats={...pendingBuild};record.statPoints=0;record.statAllocationMethod="manual";record.log.unshift("First-entry Tower build confirmed: Manual Allocation (100 starting stat points).");saveRecord();toast("Custom Tower build saved.")});
+document.querySelectorAll("#shopTabs .chip").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("#shopTabs .chip").forEach(x=>x.classList.toggle("active",x===b));shopCategory=b.dataset.category;renderShop()}));
+document.querySelector("#shopSearch")?.addEventListener("input",renderShop);document.querySelector("#shopSort")?.addEventListener("change",renderShop);
+
+document.getElementById("refreshMyToaaBtn")?.addEventListener("click",()=>avRun(toaaLoadMine));
+document.querySelector("#exportRecord").addEventListener("click",()=>{let blob=new Blob([JSON.stringify(record,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="arcane-verse-tower-record.json";a.click();URL.revokeObjectURL(a.href)});
+document.querySelector("#importFile").addEventListener("change",async e=>{let f=e.target.files[0];if(!f)return;try{let parsed=JSON.parse(await f.text());record={...structuredClone(defaultRecord),...parsed};saveRecord();toast("Record imported to this device.")}catch(err){toast("That JSON record could not be imported.")}e.target.value=""});
+renderGods();renderRules();renderRecord();renderFloors();renderBestiary();renderShop();
+
+// V2 living galaxy wallpaper: responsive stars, nebulae, touch/click energy waves.
+(function initLivingGalaxy(){
+ const canvas=document.getElementById('galaxy-wallpaper');
+ if(!canvas)return;
+ const ctx=canvas.getContext('2d',{alpha:false});
+ const reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ let w=0,h=0,dpr=1,stars=[],waves=[],enabled=!reduced,raf=0,last=0,scrollY=0;
+ const pointer={x:.5,y:.35,tx:.5,ty:.35};
+ function resize(){
+   dpr=Math.min(window.devicePixelRatio||1,1.6);w=innerWidth;h=innerHeight;
+   canvas.width=Math.floor(w*dpr);canvas.height=Math.floor(h*dpr);
+   canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);
+   const count=Math.min(180,Math.floor(w*h/6500));
+   stars=Array.from({length:count},()=>({x:Math.random()*w,y:Math.random()*h,z:.25+Math.random()*.9,r:.35+Math.random()*1.25,tw:Math.random()*6.28,blue:Math.random()>.25}));
+ }
+ function draw(t){
+   if(!enabled){raf=0;return}
+   if(t-last<28){raf=requestAnimationFrame(draw);return}last=t;
+   pointer.x+=(pointer.tx-pointer.x)*.045;pointer.y+=(pointer.ty-pointer.y)*.045;
+   ctx.fillStyle='#050918';ctx.fillRect(0,0,w,h);
+   const nx=w*(.2+pointer.x*.6),ny=h*(.1+pointer.y*.55);
+   let g=ctx.createRadialGradient(nx,ny,0,nx,ny,Math.max(w,h)*.78);
+   g.addColorStop(0,'rgba(21,68,132,.34)');g.addColorStop(.34,'rgba(30,38,105,.20)');g.addColorStop(.7,'rgba(18,21,63,.11)');g.addColorStop(1,'rgba(3,6,18,0)');
+   ctx.fillStyle=g;ctx.fillRect(0,0,w,h);
+   // Slow moving cosmic dust bands.
+   for(let i=0;i<3;i++){
+     const x=w*(.18+i*.31)+Math.sin(t*.00011+i*2)*w*.08+(pointer.x-.5)*28;
+     const y=h*(.28+i*.22)+Math.cos(t*.00009+i)*h*.05+(pointer.y-.5)*20;
+     const rg=ctx.createRadialGradient(x,y,0,x,y,w*.28);
+     rg.addColorStop(0,i===1?'rgba(61,132,219,.10)':'rgba(92,87,196,.075)');rg.addColorStop(1,'rgba(4,8,22,0)');
+     ctx.fillStyle=rg;ctx.fillRect(0,0,w,h);
+   }
+   for(const s of stars){
+     s.tw+=.012*s.z;
+     const px=(s.x+(pointer.x-.5)*22*s.z+w)%w,py=(s.y+(pointer.y-.5)*16*s.z+h)%h;
+     const a=.34+.38*(.5+.5*Math.sin(s.tw));
+     ctx.beginPath();ctx.fillStyle=s.blue?`rgba(174,224,255,${a})`:`rgba(255,221,150,${a*.9})`;ctx.arc(px,py,s.r*s.z,0,Math.PI*2);ctx.fill();
+     if(s.z>.9&&Math.sin(s.tw)> .97){ctx.strokeStyle=`rgba(170,220,255,${a*.4})`;ctx.beginPath();ctx.moveTo(px-4,py);ctx.lineTo(px+4,py);ctx.moveTo(px,py-4);ctx.lineTo(px,py+4);ctx.stroke()}
+   }
+   waves=waves.filter(wv=>wv.life<1);
+   for(const v of waves){
+     v.life+=.022;
+     const radius=v.max*(1-Math.pow(1-v.life,3));
+     ctx.beginPath();ctx.lineWidth=1.5*(1-v.life)+.25;
+     ctx.strokeStyle=`rgba(125,211,252,${(1-v.life)*.8})`;ctx.arc(v.x,v.y,radius,0,Math.PI*2);ctx.stroke();
+     ctx.beginPath();ctx.strokeStyle=`rgba(246,215,139,${(1-v.life)*.45})`;ctx.arc(v.x,v.y,radius*.72,0,Math.PI*2);ctx.stroke();
+   }
+   raf=requestAnimationFrame(draw);
+ }
+ function start(){if(enabled&&!raf){last=0;raf=requestAnimationFrame(draw)}}
+ function stop(){if(raf)cancelAnimationFrame(raf);raf=0}
+ function burst(x,y,large=false){waves.push({x,y,life:0,max:large?260:150});if(waves.length>12)waves.shift();if(!enabled){enabled=true;start();setTimeout(()=>{enabled=false;stop()},1100)}}
+ function position(e){const x=e.clientX??(e.touches&&e.touches[0].clientX)??w/2,y=e.clientY??(e.touches&&e.touches[0].clientY)??h/2;pointer.tx=x/w;pointer.ty=y/h;document.body.style.setProperty('--glow-x',(pointer.tx*100)+'%');document.body.style.setProperty('--glow-y',(pointer.ty*100)+'%')}
+ window.addEventListener('resize',resize,{passive:true});
+ window.addEventListener('pointermove',position,{passive:true});
+ window.addEventListener('pointerdown',e=>{position(e);burst(e.clientX,e.clientY,e.target.closest('button,.floorbtn,.card')!==null)},{passive:true});
+ window.addEventListener('scroll',()=>{scrollY=window.scrollY;pointer.ty=Math.max(.1,Math.min(.9,.3+scrollY/Math.max(1,document.body.scrollHeight)*.4))},{passive:true});
+ document.addEventListener('click',e=>{if(e.target.closest('button,[data-view],.floorbtn')){const r=e.target.getBoundingClientRect();burst(Math.max(12,Math.min(w-12,r.left+r.width/2)),Math.max(12,Math.min(h-12,r.top+r.height/2)),true)}},{passive:true});
+ document.getElementById('wallpaperToggle')?.addEventListener('click',()=>{enabled=!enabled;const b=document.getElementById('wallpaperToggle');b.textContent=enabled?'✦ Galaxy: On':'✦ Galaxy: Off';b.setAttribute('aria-pressed',String(enabled));if(enabled)start();else stop()});
+ resize();if(reduced){ctx.fillStyle='#050918';ctx.fillRect(0,0,w,h);for(const s of stars){ctx.fillStyle='rgba(174,224,255,.6)';ctx.fillRect(s.x,s.y,1,1)}}else start();
+})();
+
+
+// Supabase-backed player submissions and GM workflow.
+// Browser-generated audio avoids extra downloads. Android may require a tap before audio/speech can play.
+let avAudioCtx=null;
+function avTone(freq,duration,type='sine',gain=.12,delay=0){try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;avAudioCtx=avAudioCtx||new C();if(avAudioCtx.state==='suspended')avAudioCtx.resume();const o=avAudioCtx.createOscillator(),g=avAudioCtx.createGain();o.type=type;o.frequency.setValueAtTime(freq,avAudioCtx.currentTime+delay);g.gain.setValueAtTime(.0001,avAudioCtx.currentTime+delay);g.gain.exponentialRampToValueAtTime(gain,avAudioCtx.currentTime+delay+.025);g.gain.exponentialRampToValueAtTime(.0001,avAudioCtx.currentTime+delay+duration);o.connect(g);g.connect(avAudioCtx.destination);o.start(avAudioCtx.currentTime+delay);o.stop(avAudioCtx.currentTime+delay+duration+.04);}catch(e){console.debug('Audio unavailable',e)}}
+function avWelcomeAudio(){try{avTone(110,.65,'sine',.16);avTone(164.8,.8,'triangle',.10,.12);if('speechSynthesis'in window){window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance('Welcome, player. The Tower awaits.');u.rate=.76;u.pitch=.55;u.volume=.95;const voices=window.speechSynthesis.getVoices();const preferred=voices.find(v=>/en.*(male|daniel|david|alex|mark|google uk english male)/i.test(v.name+' '+v.lang));if(preferred)u.voice=preferred;window.speechSynthesis.speak(u);}}catch(e){console.debug('Welcome voice unavailable',e)}}
+function avAchievementAudio(){avTone(523.25,.22,'triangle',.12);avTone(659.25,.25,'triangle',.12,.13);avTone(783.99,.38,'sine',.14,.27);avTone(1046.5,.55,'triangle',.10,.42)}
+let avSupabase = null, avSession = null, avProfile = null, avCharacters = [];
+const avCfgKey='avTowerSupabaseConfig';
+// Public browser configuration: safe to expose when Supabase RLS policies are correctly enforced.
+const AV_SUPABASE_URL='https://hhvzmmkalcwhrxhxigdh.supabase.co';
+const AV_SUPABASE_PUBLIC_KEY='sb_publishable_Dj1WdUhxIpmOMbs7yPrAPA_Pwodwi8H';
+function avMsg(id,msg,isError=false){const el=document.getElementById(id);if(el){el.textContent=msg;el.style.color=isError?'#ff9bad':''}}
+function avClient(){if(!avSupabase)throw new Error('Connect your Supabase project first.');return avSupabase}
+function avStatus(text,ok=false){const el=document.getElementById('backendStatus');if(el){el.textContent=text;el.className='pill'+(ok?' gold':'')}}
+function avSafe(s){return esc(s)}
+function avRole(){return avProfile?.role||'player'}
+async function avConnect(save=true){
+ const url=document.getElementById('sbUrl').value.trim(),key=document.getElementById('sbKey').value.trim();
+ if(!/^https:\/\/[a-zA-Z0-9-]+\.supabase\.co$/.test(url)||!key)throw new Error('Enter a valid Supabase project URL and anon/publishable key.');
+ if(!window.supabase?.createClient)throw new Error('Supabase client library did not load. Check your internet connection.');
+ avSupabase=window.supabase.createClient(url,key,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+ if(save)localStorage.setItem(avCfgKey,JSON.stringify({url,key}));
+ const {data,error}=await avSupabase.auth.getSession();if(error)throw error;avSession=data.session;
+ avStatus('CONNECTED',true);await avLoadIdentity();return true;
+}
+async function avLoadIdentity(){
+ if(!avSupabase)return;
+ const {data:{session}}=await avSupabase.auth.getSession();avSession=session;
+ if(!session){const dp=document.getElementById('disciplinePanel');if(dp)dp.style.display='none';document.querySelectorAll('.staff-only-nav').forEach(n=>n.style.display='none');const bp=document.getElementById('backendSettingsPanel');if(bp)bp.style.display='none';avProfile=null;avMsg('authState','Not signed in.');avCharacters=[];avRenderCharacters();avMsg('myRequests','Sign in to view your submissions.');avMsg('cloudRecords','Sign in to view cloud-saved Tower progress.');avMsg('gmQueue','Sign in with an authorized GM account to view the queue.');return;}
+ const {data:profile,error}=await avSupabase.from('profiles').select('id,username,role').eq('id',session.user.id).single();
+ if(error)throw error;avProfile=profile;const staff=['gm','admin'].includes(avRole());avMsg('authState',`Signed in as ${profile.username||session.user.email} · role: ${profile.role}`);const dp=document.getElementById('disciplinePanel');if(dp)dp.style.display=staff?'block':'none';const divinePanel=document.getElementById('divineAuthorityPanel');if(divinePanel)divinePanel.style.display=staff?'block':'none';const toaaPanel=document.getElementById('toaaAuthorityPanel');if(toaaPanel)toaaPanel.style.display=staff?'block':'none';document.querySelectorAll('.staff-only-nav').forEach(n=>n.style.display=staff?'':'none');const backendPanel=document.getElementById('backendSettingsPanel');if(backendPanel)backendPanel.style.display=staff?'block':'none';if(staff){const gmNav=document.querySelector('#sidebar [data-view="gm"]');if(gmNav)gmNav.setAttribute('aria-label','GM and admin control panel');navigate('gm');}else if(document.getElementById('backendSettingsPanel'))document.getElementById('backendSettingsPanel').style.display='none';await avLoadCharacters();await avLoadRecords();await avLoadCloudStatsCharacterSelect();await avLoadCloudTowerStats();await avLoadMine();await divineLoadCharacterSelects();await toaaLoadCharacterSelect();await divineLoadMine();await divineLoadMyBlessings();await toaaLoadMine();if(staff){await divineLoadQueue();await avLoadQueue();await avLoadDiscipline();await avLoadDisciplineLog();}else avMsg('gmQueue','Your account is a player account. A Tower administrator must grant GM permissions.');
+}
+async function avRun(fn){try{await fn()}catch(e){console.error(e);toast(e.message||'The request failed.');}}
+async function avLoadCharacters(){const {data,error}=await avClient().from('tower_characters').select('id,name,arcane_rank,race,created_at').order('created_at',{ascending:false});if(error)throw error;avCharacters=data||[];avRenderCharacters()}
+function avRenderCharacters(){const select=document.getElementById('clearCharacter');if(!select)return;select.innerHTML=avCharacters.length?avCharacters.map(c=>`<option value="${avSafe(c.id)}">${avSafe(c.name)} · ${avSafe(c.arcane_rank||'Unranked')}</option>`).join(''):'<option value="">Register a character first</option>';const list=document.getElementById('myCharacters');if(list)list.innerHTML=avCharacters.length?avCharacters.map(c=>`<div style="padding:7px 0;border-bottom:1px solid #233553"><strong>${avSafe(c.name)}</strong> · ${avSafe(c.arcane_rank||'Unranked')} · ${avSafe(c.race||'Race not set')}</div>`).join(''):'No Tower characters registered yet.'}
+async function avLoadCloudStatsCharacterSelect(){const el=document.getElementById('cloudStatsCharacter');if(!el)return;if(!avSession){el.innerHTML='<option value="">Sign in first</option>';return;}const {data,error}=await avClient().from('tower_characters').select('id,name').order('name');if(error)throw error;const old=el.value;el.innerHTML=(data||[]).map(c=>`<option value="${avSafe(c.id)}">${avSafe(c.name)}</option>`).join('')||'<option value="">No characters registered</option>';if(old&&(data||[]).some(c=>c.id===old))el.value=old;}
+async function avLoadCloudTowerStats(){const out=document.getElementById('cloudTowerStats'),status=document.getElementById('cloudStatsStatus'),sel=document.getElementById('cloudStatsCharacter');if(!out)return;if(!avSession){out.innerHTML='<div class="empty">Sign in to load official Tower stats.</div>';if(status)status.textContent='';return;}if(!sel?.value){await avLoadCloudStatsCharacterSelect();}const id=sel?.value;if(!id){out.innerHTML='<div class="empty">Register a Tower character first.</div>';return;}out.innerHTML='<div class="empty">Loading official stats…</div>';const {data,error}=await avClient().from('tower_records').select('character_id,stats,level,exp,tp,stat_points,updated_at').eq('character_id',id).maybeSingle();if(error){out.innerHTML='<div class="empty">Could not load cloud stats.</div>';if(status)status.textContent=error.message;throw error;}if(!data){out.innerHTML='<div class="empty">No cloud Tower record exists for this character yet.</div>';if(status)status.textContent='Register this character in the Tower first.';return;}const stats=data.stats||{};const keys=['STR','SPD','END','REF','DUR','AGI'];out.innerHTML=keys.map(k=>`<div class="record-stat"><span>${k}</span><strong>${Number(stats[k]||0)}</strong></div>`).join('');if(status)status.textContent=`Cloud record · Level ${Number(data.level||1)} · ${Number(data.exp||0)} EXP · ${Number(data.tp||0)} TP · ${Number(data.stat_points||0)} Stat Points · Updated ${data.updated_at?new Date(data.updated_at).toLocaleString():'recently'}`;}
+async function avLoadProgression(){
+ const out=document.getElementById('progressionContent'),sel=document.getElementById('progressionCharacter');
+ if(!out||!sel)return;
+ if(!avSession){out.innerHTML='<div class="empty">Sign in to load your official Tower progression.</div>';return;}
+ const {data:chars,error:ce}=await avClient().from('tower_characters').select('id,name,arcane_rank').order('name');
+ if(ce)throw ce;
+ const list=chars||[],old=sel.value;
+ sel.innerHTML=list.map(c=>`<option value="${avSafe(c.id)}">${avSafe(c.name)} · ${avSafe(c.arcane_rank||'Tower character')}</option>`).join('')||'<option value="">No Tower characters registered</option>';
+ if(list.some(c=>c.id===old))sel.value=old;
+ if(!sel.value){out.innerHTML='<div class="empty">Register a Tower character first.</div>';return;}
+ const id=sel.value,c=list.find(x=>x.id===id);
+ const {data:r,error:re}=await avClient().from('tower_records').select('character_id,level,exp,tp,stat_points,current_floor,highest_floor,updated_at').eq('character_id',id).maybeSingle();
+ if(re)throw re;
+ if(!r){out.innerHTML='<div class="empty">No official Tower record exists for this character yet.</div>';return;}
+ const level=Math.max(1,Number(r.level)||1),exp=Math.max(0,Number(r.exp)||0),need=level*100,pct=Math.max(0,Math.min(100,Math.round(exp/need*100)));
+ const {data:tx,error:te}=await avClient().from('reward_transactions').select('request_id,exp_awarded,tp_awarded,difficulty,character_id').eq('character_id',id).order('request_id',{ascending:false}).limit(20);
+ const rows=te?[]:(tx||[]);
+ const history=te?'<tr><td colspan="4" class="muted">Reward history is restricted by current database permissions. The saved record above is still available.</td></tr>':rows.length?rows.map(t=>`<tr><td>${avSafe(t.difficulty||'Normal')}</td><td>+${Number(t.exp_awarded)||0}</td><td>+${Number(t.tp_awarded)||0}</td><td class="small muted">${avSafe(String(t.request_id).slice(0,8))}…</td></tr>`).join(''):'<tr><td colspan="4" class="muted">No reward transactions recorded yet.</td></tr>';
+ const {data:notifs,error:ne}=await avClient().from('tower_notifications').select('id,title,message,notification_type,is_read,created_at').eq('character_id',id).order('created_at',{ascending:false}).limit(10);
+ const notificationHtml=ne?'<div class="small muted">Notifications will appear here after the V14 database migration is applied.</div>':(notifs||[]).length?(notifs||[]).map(n=>`<article class="card" style="margin:8px 0;padding:10px;border-color:${n.notification_type==='level_up'?'var(--gold)':'var(--line)'}"><div class="row"><strong>${avSafe(n.title)}</strong><span class="pill ${n.notification_type==='level_up'?'gold':''}">${n.is_read?'Read':'New'}</span></div><p class="small" style="margin:7px 0">${avSafe(n.message)}</p><div class="small muted">${n.created_at?new Date(n.created_at).toLocaleString():'Recently'}</div></article>`).join(''):'<div class="empty">No Tower notifications yet.</div>';
+ out.innerHTML=`<div class="record-grid"><div class="record-stat"><span>Tower level</span><strong>${level}</strong></div><div class="record-stat"><span>EXP</span><strong>${exp} / ${need}</strong></div><div class="record-stat"><span>Tower points</span><strong>${Number(r.tp)||0}</strong></div><div class="record-stat"><span>Unspent stat points</span><strong>${Number(r.stat_points)||0}</strong></div><div class="record-stat"><span>Highest floor</span><strong>${Number(r.highest_floor)||0} / 100</strong></div><div class="record-stat"><span>Next floor</span><strong>${Number(r.current_floor)===101?'Tower cleared':Number(r.current_floor)||1}</strong></div><div class="record-stat"><span>To next level</span><strong>${Math.max(0,need-exp)} EXP</strong></div></div>
+ <div class="card" style="margin-top:12px"><div class="row"><div><div class="eyebrow">${avSafe(c?.name||'Tower character')}</div><h3 style="margin:5px 0">Level ${level} progression</h3></div><span class="pill gold">${pct}%</span></div><div class="progress" style="margin-top:12px"><i style="width:${pct}%"></i></div><p class="small muted">${exp} EXP earned toward ${need} EXP required. ${Math.max(0,need-exp)} EXP remaining.</p><div class="notice">Next milestone: Level ${level+1}. Level-up notifications appear when the saved record crosses a level threshold and the notification feature is enabled.</div></div>
+ <div class="card" style="margin-top:12px"><h3>Notifications & level-ups</h3>${notificationHtml}</div><div class="card" style="margin-top:12px"><h3>Recent reward history</h3><div style="overflow:auto"><table class="table"><thead><tr><th>Difficulty</th><th>EXP</th><th>TP</th><th>Request</th></tr></thead><tbody>${history}</tbody></table></div><p class="small muted">Last synced: ${r.updated_at?new Date(r.updated_at).toLocaleString():'recently'}</p></div>`;
+}
+document.getElementById('refreshProgressionBtn')?.addEventListener('click',()=>avRun(avLoadProgression));
+document.getElementById('progressionCharacter')?.addEventListener('change',()=>avRun(avLoadProgression));
+async function avLoadRecords(){
+ const out=document.getElementById('cloudRecords');if(!out||!avSession){if(out)out.textContent='Sign in to view cloud-saved Tower progress.';return;}
+ const {data,error}=await avClient().from('tower_records').select('character_id,level,exp,tp,stat_points,stats,current_floor,highest_floor,updated_at').order('updated_at',{ascending:false});if(error)throw error;
+ const records=data||[];if(!records.length){avCloudSummary=null;out.innerHTML='<div class="empty">No cloud records yet. Register a Tower character to create its official record.</div>';return;}
+ const summaryRecord=records[0],summaryCharacter=avCharacters.find(x=>x.id===summaryRecord.character_id);
+ avCloudSummary={record:summaryRecord,name:summaryCharacter?.name||'Tower character'};
+ avApplyCloudSummary();
+ out.innerHTML=records.map(r=>{const c=avCharacters.find(x=>x.id===r.character_id);const name=c?.name||'Tower character';const need=Math.max(1,Number(r.level||1)*100);const progress=Math.min(100,Math.round(Number(r.exp||0)/need*100));return `<article class="card" style="margin:8px 0;padding:12px"><div class="row"><strong>${avSafe(name)}</strong><span class="pill gold">Level ${Number(r.level)||1}</span></div><div class="grid2" style="margin-top:10px"><div><div class="small muted">Tower EXP</div><strong>${Number(r.exp)||0} / ${need}</strong></div><div><div class="small muted">Tower Points</div><strong>${Number(r.tp)||0} TP</strong></div><div><div class="small muted">Highest floor</div><strong>${Number(r.highest_floor)||0} / 100</strong></div><div><div class="small muted">Next floor</div><strong>${Number(r.current_floor)===101?'Tower cleared':Number(r.current_floor)||1}</strong></div></div><div class="small muted" style="margin-top:10px">Tower stats: ${['STR','SPD','END','REF','DUR','AGI'].map(k=>`${k} ${Number((r.stats||{})[k]||0)}`).join(' · ')}</div><div style="height:7px;background:#17243c;border-radius:99px;overflow:hidden;margin-top:10px"><div style="height:100%;width:${progress}%;background:linear-gradient(90deg,#7c5cff,#57e7ff);border-radius:99px"></div></div><div class="small muted" style="margin-top:7px">Cloud updated ${r.updated_at?new Date(r.updated_at).toLocaleString():'recently'}</div></article>`}).join('');
+}
+async function avLoadMine(){const {data,error}=await avClient().from('floor_clear_requests').select('id,character_id,floor_number,difficulty,status,evidence_url,notes,review_reason,stat_points_awarded,created_at,reviewed_at').order('created_at',{ascending:false}).limit(50);if(error)throw error;const out=document.getElementById('myRequests');out.innerHTML=(data||[]).length?(data||[]).map(r=>{const c=avCharacters.find(x=>x.id===r.character_id);return `<article class="card" style="margin:8px 0;padding:12px"><div class="row"><strong>Floor ${r.floor_number} · ${avSafe(c?.name||'Character')}</strong><span class="pill ${r.status==='approved'?'gold':r.status==='rejected'?'red':''}">${avSafe(r.status)}</span></div><div class="small muted">${avSafe(r.difficulty)} · Submitted ${new Date(r.created_at).toLocaleString()}</div>${r.evidence_url?`<p><a href="${avSafe(r.evidence_url)}" target="_blank" rel="noopener noreferrer">Open evidence ↗</a></p>`:''}${r.status==='approved'?`<p class="small"><strong>Stat points awarded:</strong> ${Number(r.stat_points_awarded)||0}</p>`:''}${r.review_reason?`<p class="small">Review note: ${avSafe(r.review_reason)}</p>`:''}${r.status==='changes_requested'?`<label class="small muted">Updated encounter notes<textarea class="field" id="resubmit-notes-${r.id}" rows="2">${avSafe(r.notes||'')}</textarea></label><label class="small muted">Updated evidence URL<input class="field" id="resubmit-evidence-${r.id}" type="url" value="${avSafe(r.evidence_url||'')}" placeholder="https://…"></label><button class="btn primary" style="margin-top:8px" onclick="avResubmit('${r.id}')">Resubmit for review</button>`:''}</article>`}).join(''):'No submissions yet.'}
+async function avLoadQueue(){if(!['gm','admin'].includes(avRole())){avMsg('gmQueue','GM permissions required.');return;}const {data,error}=await avClient().from('floor_clear_requests').select('id,player_id,character_id,floor_number,difficulty,evidence_url,notes,status,created_at').eq('status','pending').order('created_at',{ascending:true}).limit(100);if(error)throw error;const out=document.getElementById('gmQueue');if(!(data||[]).length){out.innerHTML='<div class="empty">No pending floor clears.</div>';return;}const ids=[...new Set(data.map(r=>r.character_id))];let chars=[];if(ids.length){const cr=await avClient().from('tower_characters').select('id,name').in('id',ids);if(cr.error)throw cr.error;chars=cr.data||[];}out.innerHTML=data.map(r=>{const c=chars.find(x=>x.id===r.character_id);return `<article class="card" style="margin:10px 0"><div class="row"><div><div class="eyebrow">Pending submission</div><h3 style="margin:4px 0">Floor ${r.floor_number} · ${avSafe(c?.name||'Character')}</h3></div><span class="pill gold">${avSafe(r.difficulty)}</span></div><p class="small muted">Stat-point reward if approved: ${{easy:2,normal:5,hard:8,extreme:12}[String(r.difficulty||'normal').toLowerCase()]||5} · Player ID: ${avSafe(r.player_id)} · ${new Date(r.created_at).toLocaleString()}</p><p>${avSafe(r.notes||'No encounter notes supplied.')}</p>${r.evidence_url?`<p><a href="${avSafe(r.evidence_url)}" target="_blank" rel="noopener noreferrer">Open RP evidence ↗</a></p>`:'<p class="small muted">No evidence URL supplied; review notes carefully.</p>'}<label class="small muted">GM review note<textarea class="field" id="review-${r.id}" rows="2" placeholder="Required if rejecting or requesting changes"></textarea></label><div class="inline" style="margin-top:10px"><button class="btn gold" onclick="avReview('${r.id}','approve')">Approve & award</button><button class="btn danger" onclick="avReview('${r.id}','reject')">Reject</button><button class="btn" onclick="avReview('${r.id}','changes')">Request changes</button></div></article>`}).join('')}
+let avDisciplineRecords=[];
+async function avLoadDiscipline(){
+ if(!['gm','admin'].includes(avRole()))throw new Error('GM permission required.');
+ const [cr,rr]=await Promise.all([
+  avClient().from('tower_characters').select('id,name,arcane_rank,race').order('name',{ascending:true}),
+  avClient().from('tower_records').select('character_id,level,exp,tp,stat_points,stats,current_floor,highest_floor,updated_at').order('updated_at',{ascending:false})
+ ]);
+ if(cr.error)throw cr.error;if(rr.error)throw rr.error;
+ const chars=cr.data||[], recs=rr.data||[];avDisciplineRecords=recs;
+ const sel=document.getElementById('disciplineCharacter');const current=sel.value;
+ sel.innerHTML=chars.map(c=>`<option value="${avSafe(c.id)}">${avSafe(c.name)} · ${avSafe(c.arcane_rank||'Unranked')}</option>`).join('')||'<option value="">No characters found</option>';
+ if(chars.some(c=>c.id===current))sel.value=current;
+ const r=recs.find(x=>x.character_id===sel.value);avRenderDisciplineCurrent(r,chars.find(c=>c.id===sel.value));
+ if(!chars.length)document.getElementById('disciplineCurrent').textContent='No Tower characters found.';
+}
+async function avLoadDisciplineLog(){
+ if(!['gm','admin'].includes(avRole()))throw new Error('GM permission required.');
+ const out=document.getElementById('disciplineLog');
+ const {data,error}=await avClient().from('tower_discipline_log').select('id,character_id,performed_by,reason,previous_record,new_record,created_at').order('created_at',{ascending:false}).limit(50);
+ if(error)throw error;
+ const rows=data||[];
+ if(!rows.length){out.textContent='No disciplinary corrections have been recorded yet.';return;}
+ const chars=await avClient().from('tower_characters').select('id,name').in('id',[...new Set(rows.map(x=>x.character_id))]);
+ if(chars.error)throw chars.error;
+ out.innerHTML=rows.map(x=>{const c=(chars.data||[]).find(z=>z.id===x.character_id);const a=x.previous_record||{},b=x.new_record||{};return `<article class="card" style="margin:8px 0;padding:10px"><div class="row"><strong>${avSafe(c?.name||x.character_id)}</strong><span class="pill red">Record changed</span></div><div class="small muted">${x.created_at?new Date(x.created_at).toLocaleString():''} · Staff ID: ${avSafe(x.performed_by)}</div><p class="small">${avSafe(x.reason)}</p><div class="small">Before: Lv ${Number(a.level)||1}, EXP ${Number(a.exp)||0}, TP ${Number(a.tp)||0}, current floor ${Number(a.current_floor)||1}, highest ${Number(a.highest_floor)||0}</div><div class="small">After: Lv ${Number(b.level)||1}, EXP ${Number(b.exp)||0}, TP ${Number(b.tp)||0}, current floor ${Number(b.current_floor)||1}, highest ${Number(b.highest_floor)||0}</div></article>`}).join('');
+}
+function avRenderDisciplineCurrent(r,c){const out=document.getElementById('disciplineCurrent');if(!out)return;out.innerHTML=r?`<strong>${avSafe(c?.name||'Tower character')}</strong><br>Current: Level ${Number(r.level)||1} · ${Number(r.exp)||0} EXP · ${Number(r.tp)||0} TP · Current floor ${Number(r.current_floor)||1} · Highest cleared ${Number(r.highest_floor)||0}<br><span class="muted">Updated ${r.updated_at?new Date(r.updated_at).toLocaleString():'time unavailable'}</span>`:'No record found for this character.'}
+function avFillDisciplineForm(){const id=document.getElementById('disciplineCharacter').value;const r=avDisciplineRecords.find(x=>x.character_id===id);if(!r){toast('No cloud record found for this character.');return;}document.getElementById('disciplineLevel').value=Number(r.level)||1;document.getElementById('disciplineExp').value=Number(r.exp)||0;document.getElementById('disciplineTp').value=Number(r.tp)||0;document.getElementById('disciplineCurrentFloor').value=Number(r.current_floor)||1;document.getElementById('disciplineHighestFloor').value=Number(r.highest_floor)||0;document.getElementById('disciplineReason').value='';toast('Current record loaded. Make only the required corrections.');}
+async function avSaveDiscipline(){
+ if(!['gm','admin'].includes(avRole()))throw new Error('GM permission required.');
+ const character_id=document.getElementById('disciplineCharacter').value;
+ const level=Number(document.getElementById('disciplineLevel').value),exp=Number(document.getElementById('disciplineExp').value),tp=Number(document.getElementById('disciplineTp').value),current_floor=Number(document.getElementById('disciplineCurrentFloor').value),highest_floor=Number(document.getElementById('disciplineHighestFloor').value),reason=document.getElementById('disciplineReason').value.trim();
+ if(!character_id)throw new Error('Select a Tower character.');
+ if(!reason||reason.length<12)throw new Error('Enter a clear reason of at least 12 characters.');
+ if(!Number.isInteger(level)||level<1||level>999)throw new Error('Level must be a whole number from 1 to 999.');
+ if(!Number.isInteger(exp)||exp<0||exp>=level*100)throw new Error('EXP must be from 0 up to (but not including) the current level requirement.');
+ if(!Number.isInteger(tp)||tp<0)throw new Error('TP cannot be negative.');
+ if(!Number.isInteger(current_floor)||current_floor<1||current_floor>101)throw new Error('Current floor must be between 1 and 101.');
+ if(!Number.isInteger(highest_floor)||highest_floor<0||highest_floor>100)throw new Error('Highest floor must be between 0 and 100.');
+ if(current_floor!==highest_floor+1)throw new Error('Current floor must equal highest cleared floor + 1 (Floor 100 clear uses current floor 101).');
+ const old=avDisciplineRecords.find(x=>x.character_id===character_id);
+ if(!old)throw new Error('No existing Tower record found. Refresh player records first.');
+ const changed=level<(Number(old.level)||1)||exp<(Number(old.exp)||0)||tp<(Number(old.tp)||0)||current_floor<(Number(old.current_floor)||1)||highest_floor<(Number(old.highest_floor)||0);
+ const summary=changed?'This adjustment lowers at least one progression value.':'This adjustment changes/corrects a Tower record.';
+ if(!confirm(`${summary} This will be saved permanently and written to the discipline audit log. Continue?`))return;
+ const {error}=await avClient().rpc('admin_adjust_tower_record',{p_character_id:character_id,p_level:level,p_exp:exp,p_tp:tp,p_current_floor:current_floor,p_highest_floor:highest_floor,p_reason:reason});
+ if(error)throw error;
+ document.getElementById('disciplineReason').value='';await avLoadDiscipline();await avLoadRecords();toast('Tower record updated and disciplinary action logged.');
+}
+async function avResubmit(id){const notes=document.getElementById('resubmit-notes-'+id)?.value.trim()||'';const evidence_url=document.getElementById('resubmit-evidence-'+id)?.value.trim()||'';if(!notes&&!evidence_url){toast('Add updated notes or an evidence URL.');return;}if(evidence_url&&!/^https:\/\//i.test(evidence_url)){toast('Evidence URL must start with https://');return;}const {error}=await avClient().rpc('resubmit_floor_clear',{p_request_id:id,p_evidence_url:evidence_url,p_notes:notes,p_difficulty:null});if(error)throw error;toast('Updated submission returned to the GM queue.');await avLoadMine();} 
+async function avReview(id,action){const note=document.getElementById('review-'+id)?.value.trim()||'';if(action!=='approve'&&!note){toast('Add a review reason first.');return;}if(!confirm(action==='approve'?'Approve this floor clear and award the configured rewards?':action==='reject'?'Reject this request?':'Return this request for corrections?'))return;let beforeLevel=null;if(action==='approve'){const q=await avClient().from('floor_clear_requests').select('character_id').eq('id',id).maybeSingle();if(q.error)throw q.error;if(q.data){const p=await avClient().from('tower_records').select('level').eq('character_id',q.data.character_id).maybeSingle();if(p.error)throw p.error;beforeLevel=Number(p.data?.level)||1;}}const rpc=action==='approve'?'approve_floor_clear':action==='reject'?'reject_floor_clear':'request_floor_clear_changes';const args={p_request_id:id,p_review_note:note};const {data,error}=await avClient().rpc(rpc,args);if(error)throw error;const newLevel=Number(data?.new_level)||beforeLevel;if(action==='approve'&&beforeLevel!==null&&newLevel>beforeLevel){toast(`LEVEL UP! Tower Level ${newLevel} reached!`);const b=document.getElementById('progressionBadge');if(b)b.style.display='inline-flex';}else toast(action==='approve'?'Floor clear approved and rewards processed.':action==='reject'?'Submission rejected.':'Changes requested.');if(action==='approve')avAchievementAudio();await avLoadQueue();await avLoadMine();await avLoadRecords();if(document.getElementById('view-progression')?.classList.contains('active'))await avLoadProgression();}
+window.openClearSubmission=function(n){document.getElementById('clearFloor').value=n;navigate('gm');document.getElementById('clearNotes').focus({preventScroll:true});document.getElementById('clearFloor').scrollIntoView({behavior:'smooth',block:'center'});};
+// Divine trial applications and GM blessing authority (requires Divine Authority SQL migration).
+const divineGods=[{name:'Aurex',title:'Knight of Ascension',perk:'Ascension Through Battle'},{name:'Selenyra',title:'Child of Fate',perk:'The Unlikely Path'},{name:'Morvane',title:'Reaper of the Tower',perk:"The Reaper's Bargain"},{name:'Elyria',title:'Knight of Sanctum',perk:'Sanctified Soul'},{name:'Vaelor',title:'Archivist of the Tower',perk:'The Grand Archive'}];
+function toaaEsc(x){return avSafe(String(x??''))}
+async function toaaLoadCharacterSelect(){if(!avSession)return;const el=document.getElementById('toaaCharacter');if(!el)return;const {data,error}=await avClient().from('tower_characters').select('id,name').order('name');if(error)throw error;el.innerHTML=(data||[]).map(c=>`<option value="${toaaEsc(c.id)}">${toaaEsc(c.name)}</option>`).join('')||'<option value="">No characters registered</option>';}
+async function toaaGrant(){if(!['gm','admin'].includes(avRole()))throw new Error('Goddess TOAA authority requires GM/Admin permission.');const character_id=document.getElementById('toaaCharacter').value,type=document.getElementById('toaaType').value,name=document.getElementById('toaaName').value.trim(),description=document.getElementById('toaaDescription').value.trim(),reason=document.getElementById('toaaReason').value.trim();if(!character_id||name.length<2||description.length<4||reason.length<8)throw new Error('Select a character and provide a name, description/effect, and audit reason.');let payload={};if(type==='stats'){const stat=document.getElementById('toaaStat').value,amount=Number(document.getElementById('toaaAmount').value);if(!Number.isInteger(amount)||amount<1||amount>100000)throw new Error('Stat amount must be a whole number from 1 to 100000.');payload={stat,amount};const {error}=await avClient().rpc('toaa_grant_stat',{p_character_id:character_id,p_stat:stat,p_amount:amount,p_name:name,p_description:description,p_payload:payload,p_reason:reason});if(error)throw error;}else{const {error}=await avClient().from('toaa_grants').insert({character_id,grant_type:type,name,description,payload,reason,granted_by:avSession.user.id,is_active:true});if(error)throw error;}document.getElementById('toaaName').value='';document.getElementById('toaaDescription').value='';document.getElementById('toaaReason').value='';await toaaLoadMine();if(type==='stats'){await avLoadCloudStatsCharacterSelect();const cs=document.getElementById('cloudStatsCharacter');if(cs)cs.value=character_id;await avLoadCloudTowerStats();await avLoadRecords();}toast(type==='stats'?'Tower stats updated in the cloud record. Refresh the player record to confirm.':'Grant saved for this character.');}
+async function toaaLoadMine(){const staff=['gm','admin'].includes(avRole()),out=document.getElementById(staff?'toaaGrantList':'myToaaGrants');if(!out)return;if(!avSession){out.textContent='Sign in to view grants.';return;}let q=avClient().from('toaa_grants').select('id,character_id,grant_type,name,description,payload,reason,is_active,created_at').eq('is_active',true).order('created_at',{ascending:false}).limit(150);const {data,error}=await q;if(error){out.textContent='Could not load grants. Confirm the TOAA SQL migration is installed and policies are active.';throw error;}const rows=data||[];const ids=[...new Set(rows.map(r=>r.character_id))];let chars=[];if(ids.length){const cr=await avClient().from('tower_characters').select('id,name').in('id',ids);if(cr.error)throw cr.error;chars=cr.data||[]}const visible=staff?rows:rows.filter(r=>chars.some(c=>c.id===r.character_id));out.innerHTML=visible.length?visible.map(r=>`<article class="record-stat" style="margin:8px 0"><div class="row"><strong>${toaaEsc(r.name)} · ${toaaEsc(chars.find(c=>c.id===r.character_id)?.name||'Character')}</strong><span class="pill gold">${toaaEsc(r.grant_type==='ability'?'GRANTED ABILITY':r.grant_type.toUpperCase())}</span></div><p class="small" style="margin:6px 0"><strong>${toaaEsc(r.name)}</strong><br>${toaaEsc(r.description)}</p>${r.grant_type==='stats'?`<div class="small">Stat award: ${toaaEsc(r.payload?.stat)} +${toaaEsc(r.payload?.amount)}</div>`:''}<div class="small muted">${toaaEsc(r.reason||'TOAA grant')} · ${r.created_at?new Date(r.created_at).toLocaleString():''}</div></article>`).join(''):'No active TOAA grants found.'}
+document.getElementById('refreshCloudStatsBtn')?.addEventListener('click',()=>avRun(avLoadCloudTowerStats));document.getElementById('cloudStatsCharacter')?.addEventListener('change',()=>avRun(avLoadCloudTowerStats));
+document.getElementById('toaaGrantBtn')?.addEventListener('click',()=>avRun(toaaGrant));document.getElementById('toaaRefreshBtn')?.addEventListener('click',()=>avRun(toaaLoadMine));document.getElementById('refreshMyToaaBtn')?.addEventListener('click',()=>avRun(toaaLoadMine));document.getElementById('toaaType')?.addEventListener('change',()=>{document.getElementById('toaaStatFields').style.display=document.getElementById('toaaType').value==='stats'?'grid':'none'});
+function divineStaff(){return ['gm','admin'].includes(avRole())}
+async function divineLoadCharacterSelects(){if(!avSession)return;const {data,error}=await avClient().from('tower_characters').select('id,name,arcane_rank').order('created_at',{ascending:false});if(error)throw error;const opts=(data||[]).map(c=>`<option value="${avSafe(c.id)}">${avSafe(c.name)} · ${avSafe(c.arcane_rank||'Unranked')}</option>`).join('');for(const id of ['divineCharacter','blessingCharacter']){const el=document.getElementById(id);if(el)el.innerHTML=opts||'<option value="">No characters registered</option>';}}
+async function divineApply(){if(!avSession)throw new Error('Sign in first.');const character_id=document.getElementById('divineCharacter').value,god=document.getElementById('godSelect').value,notes=document.getElementById('divineTrialNotes').value.trim();if(!character_id)throw new Error('Register and select a Tower character.');if(!god)throw new Error('Choose a God first.');if(notes.length<12)throw new Error('Add trial notes (at least 12 characters).');const {error}=await avClient().from('divine_trial_applications').insert({player_id:avSession.user.id,character_id,god,notes});if(error)throw error;document.getElementById('divineTrialNotes').value='';toast('Divine trial application submitted.');await divineLoadMine();}
+async function divineLoadMine(){const out=document.getElementById('divineMyApplications');if(!out)return;if(!avSession){out.textContent='Sign in to view applications.';return;}const {data,error}=await avClient().from('divine_trial_applications').select('id,character_id,god,notes,status,gm_note,created_at,reviewed_at').order('created_at',{ascending:false}).limit(30);if(error)throw error;out.innerHTML=(data||[]).length?(data||[]).map(a=>{const c=avCharacters.find(x=>x.id===a.character_id);return `<article class="card" style="margin:8px 0;padding:10px"><div class="row"><strong>${avSafe(a.god)} · ${avSafe(c?.name||'Character')}</strong><span class="pill ${a.status==='approved'?'gold':a.status==='rejected'?'red':''}">${avSafe(a.status)}</span></div><div class="small muted">${new Date(a.created_at).toLocaleString()}</div>${a.gm_note?`<p class="small">GM note: ${avSafe(a.gm_note)}</p>`:''}</article>`}).join(''):'No divine trial applications yet.'}
+async function divineLoadQueue(){if(!divineStaff())throw new Error('GM permission required.');const out=document.getElementById('divineApplicationQueue');const {data,error}=await avClient().from('divine_trial_applications').select('id,player_id,character_id,god,notes,status,gm_note,created_at').eq('status','pending').order('created_at',{ascending:true}).limit(100);if(error)throw error;const rows=data||[];const ids=[...new Set(rows.map(x=>x.character_id))];let chars=[];if(ids.length){const r=await avClient().from('tower_characters').select('id,name').in('id',ids);if(r.error)throw r.error;chars=r.data||[]}out.innerHTML=rows.length?rows.map(a=>{const c=chars.find(x=>x.id===a.character_id),g=divineGods.find(x=>x.name===a.god);return `<article class="card" style="margin:8px 0;padding:12px"><div class="row"><div><div class="eyebrow">Divine trial application</div><h3 style="margin:4px 0">${avSafe(a.god)} · ${avSafe(c?.name||'Character')}</h3></div><span class="pill gold">Pending</span></div><p class="small muted">Player ID: ${avSafe(a.player_id)} · ${new Date(a.created_at).toLocaleString()}</p><p>${avSafe(a.notes)}</p><p class="small"><strong>Title:</strong> ${avSafe(g?.title||'Vassal')} · <strong>Perk:</strong> ${avSafe(g?.perk||'')}</p><label class="small muted">GM decision note<textarea class="field" id="divine-note-${a.id}" rows="2" placeholder="Required for approval or rejection"></textarea></label><div class="inline" style="margin-top:8px"><button class="btn gold" onclick="divineReview('${a.id}','approve')">Approve + grant God's perk</button><button class="btn danger" onclick="divineReview('${a.id}','reject')">Reject</button></div></article>`}).join(''):'<div class="empty">No pending divine trial applications.</div>';await divineLoadBlessings();}
+async function divineReview(id,decision){if(!divineStaff())throw new Error('GM permission required.');const note=document.getElementById('divine-note-'+id)?.value.trim()||'';if(note.length<8)throw new Error('Enter a GM decision note (at least 8 characters).');if(!confirm(decision==='approve'?'Approve this divine trial and grant the God\'s configured perk?':'Reject this divine trial application?'))return;const {error}=await avClient().rpc('review_divine_trial',{p_application_id:id,p_decision:decision,p_gm_note:note});if(error)throw error;toast(decision==='approve'?'Trial approved and blessing granted.':'Divine trial rejected.');await divineLoadQueue();await divineLoadMine();await divineLoadMyBlessings();await avLoadIdentity();}
+const divineDetails={
+ Aurex:{title:'Knight of Ascension',perk:'Ascension Through Battle',description:'A battle-growth blessing focused on strength, combat instincts, and momentum.',abilities:[{name:'Ascendant Drive',effect:'Once per approved encounter, declare a focused offensive push. The GM determines its outcome under Tower combat rules.'},{name:'Victory Momentum',effect:'After a GM-confirmed victory against a meaningful threat, the GM may award a temporary narrative advantage in the next encounter.'}]},
+ Selenyra:{title:'Child of Fate',perk:'The Unlikely Path',description:'A fate-themed blessing focused on probability, discovery, and difficult choices.',abilities:[{name:'Fortune’s Nudge',effect:'Once per approved encounter, request one reroll of a non-damage check; the GM must approve the check and reroll.'},{name:'Hidden Path',effect:'Once per expedition, ask the GM for a hint toward a concealed clue or alternative route.'}]},
+ Morvane:{title:'Reaper of the Tower',perk:"The Reaper's Bargain",description:'A death-and-souls blessing built around risk, sacrifice, and dangerous victories.',abilities:[{name:'Reaper’s Claim',effect:'After a GM-confirmed victory over a dangerous enemy, request a bonus soul-related reward if the encounter rules allow it.'},{name:'Last Bargain',effect:'Once per approved encounter, offer a clearly stated cost for a tactical advantage; the GM sets and approves the cost and effect.'}]},
+ Elyria:{title:'Knight of Sanctum',perk:'Sanctified Soul',description:'A sanctum blessing focused on protection, healing, purification, and resisting corruption.',abilities:[{name:'Sanctuary Ward',effect:'Once per approved encounter, create a protective ward whose strength and duration are set by the GM.'},{name:'Purifying Touch',effect:'Once per expedition, request removal or reduction of one eligible corruption effect, subject to GM approval.'}]},
+ Vaelor:{title:'Archivist of the Tower',perk:'The Grand Archive',description:'A knowledge blessing focused on analysis, enemy weaknesses, and magical discovery.',abilities:[{name:'Threat Analysis',effect:'Once per approved encounter, ask the GM to reveal one clue about an enemy’s trait, resistance, or weakness.'},{name:'Arcane Study',effect:'After encountering an unfamiliar spell or phenomenon, request a lore or mechanics hint from the GM.'}]}
+};
+async function divineLoadMyBlessings(){const out=document.getElementById('myDivineBlessings');if(!out)return;if(!avSession){out.innerHTML='Sign in to view blessings granted to your characters.';return;}out.innerHTML='Loading your blessings…';const {data,error}=await avClient().from('divine_blessings').select('id,character_id,god,perk,is_active,gm_reason,updated_at').eq('is_active',true).order('updated_at',{ascending:false}).limit(100);if(error)throw error;const rows=data||[];if(!rows.length){out.innerHTML='<div class="empty">No active divine blessings found for your account yet. Complete a divine trial and wait for GM approval.</div>';return;}const ids=[...new Set(rows.map(b=>b.character_id))];const cr=await avClient().from('tower_characters').select('id,name').in('id',ids);if(cr.error)throw cr.error;const chars=cr.data||[];const mine=rows.filter(b=>chars.some(c=>c.id===b.character_id));if(!mine.length){out.innerHTML='<div class="empty">No blessings are currently visible for your registered characters.</div>';return;}out.innerHTML=mine.map(b=>{const g=divineDetails[b.god]||{title:'Vassal',perk:b.perk,description:'A GM-granted divine blessing.',abilities:[]};const abilities=g.abilities.map(a=>`<div style="padding:9px;margin-top:7px;border-radius:10px;background:rgba(255,255,255,.035)"><strong>✧ ${avSafe(a.name)}</strong><p class="small" style="margin:5px 0 0">${avSafe(a.effect)}</p></div>`).join('');return `<article class="card" style="margin:10px 0;padding:14px"><div class="row"><div><div class="eyebrow">ACTIVE DIVINE CONTRACT</div><h3 style="margin:4px 0">${avSafe(b.god)}</h3><div class="small muted">${avSafe(chars.find(c=>c.id===b.character_id)?.name||'Your character')} · ${avSafe(g.title)}</div></div><span class="pill gold">ACTIVE</span></div><div class="divider"></div><h4 style="margin:8px 0">${avSafe(b.perk||g.perk)}</h4><p class="small">${avSafe(g.description)}</p><h4 style="margin:12px 0 4px">Granted abilities & effects</h4>${abilities||'<p class="small muted">No ability details configured for this blessing yet. Ask your GM for the official effect.</p>'}<p class="small muted" style="margin-top:10px">GM approval note: ${avSafe(b.gm_reason||'Approved blessing')}<br>Updated: ${b.updated_at?new Date(b.updated_at).toLocaleString():'Recently'}</p><p class="small muted">Ability descriptions are rule prompts; numerical damage, cooldowns, and automatic combat effects are not yet enforced by the Tower engine.</p></article>`}).join('');}
+async function divineLoadBlessings(){if(!divineStaff())return;const out=document.getElementById('divineBlessingList');const {data,error}=await avClient().from('divine_blessings').select('id,character_id,god,perk,is_active,gm_reason,updated_at').order('updated_at',{ascending:false}).limit(100);if(error)throw error;const rows=data||[];const ids=[...new Set(rows.map(x=>x.character_id))];let chars=[];if(ids.length){const r=await avClient().from('tower_characters').select('id,name').in('id',ids);if(r.error)throw r.error;chars=r.data||[]}out.innerHTML=rows.length?rows.map(b=>`<div class="record-stat" style="margin:7px 0"><div class="row"><strong>${avSafe(chars.find(c=>c.id===b.character_id)?.name||'Character')} · ${avSafe(b.god)}</strong><span class="pill ${b.is_active?'gold':'red'}">${b.is_active?'ACTIVE':'REVOKED'}</span></div><div>${avSafe(b.perk)}</div><div class="small muted">${avSafe(b.gm_reason||'No reason recorded')}</div></div>`).join(''):'No blessings recorded yet.'}
+async function divineGrant(){if(!divineStaff())throw new Error('GM permission required.');const character_id=document.getElementById('blessingCharacter').value,god=document.getElementById('blessingGod').value,perk=document.getElementById('blessingPerk').value.trim(),gm_reason=document.getElementById('blessingReason').value.trim();if(!character_id||!perk||gm_reason.length<8)throw new Error('Select a character and provide a perk and GM reason (at least 8 characters).');const {error}=await avClient().from('divine_blessings').upsert({character_id,god,perk,gm_reason,is_active:true,granted_by:avSession.user.id},{onConflict:'character_id,god'});if(error)throw error;document.getElementById('blessingReason').value='';await divineLoadBlessings();await divineLoadMyBlessings();toast('Blessing saved to Supabase.');}
+async function divineRevoke(){if(!divineStaff())throw new Error('GM permission required.');const character_id=document.getElementById('blessingCharacter').value,god=document.getElementById('blessingGod').value,gm_reason=document.getElementById('blessingReason').value.trim();if(!character_id||gm_reason.length<8)throw new Error('Select a character and explain why the blessing is being revoked.');const {error}=await avClient().from('divine_blessings').update({is_active:false,gm_reason,granted_by:avSession.user.id}).eq('character_id',character_id).eq('god',god);if(error)throw error;await divineLoadBlessings();await divineLoadMyBlessings();toast('Blessing revoked.');}
+document.getElementById('applyDivineBtn')?.addEventListener('click',()=>avRun(divineApply));document.getElementById('refreshMyBlessingsBtn')?.addEventListener('click',()=>avRun(divineLoadMyBlessings));document.getElementById('refreshDivineBtn')?.addEventListener('click',()=>avRun(divineLoadQueue));document.getElementById('grantBlessingBtn')?.addEventListener('click',()=>avRun(divineGrant));document.getElementById('revokeBlessingBtn')?.addEventListener('click',()=>avRun(divineRevoke));
+document.getElementById('connectSupabase')?.addEventListener('click',()=>avRun(async()=>{await avConnect(true);toast('Supabase connected.')}));
+document.getElementById('forgetSupabase')?.addEventListener('click',()=>{localStorage.removeItem(avCfgKey);avSupabase=null;avSession=null;avProfile=null;avStatus('NOT CONFIGURED');avMsg('authState','Backend configuration removed from this device.');toast('Configuration removed from this device.');});
+document.getElementById('signUpBtn')?.addEventListener('click',()=>avRun(async()=>{const email=document.getElementById('authEmail').value.trim(),password=document.getElementById('authPassword').value;if(!email||password.length<8)throw new Error('Enter an email and password with at least 8 characters.');const {data,error}=await avClient().auth.signUp({email,password,options:{data:{username:email.split('@')[0]}}});if(error)throw error;if(data.session){avSession=data.session;await avLoadIdentity();avWelcomeAudio();toast('Account created.')}else avMsg('authState','Account created. Check your email to confirm, then sign in.');}));
+document.getElementById('signInBtn')?.addEventListener('click',()=>avRun(async()=>{const {data,error}=await avClient().auth.signInWithPassword({email:document.getElementById('authEmail').value.trim(),password:document.getElementById('authPassword').value});if(error)throw error;avSession=data.session;await avLoadIdentity();avWelcomeAudio();toast('Signed in.');}));
+document.getElementById('signOutBtn')?.addEventListener('click',()=>avRun(async()=>{const {error}=await avClient().auth.signOut();if(error)throw error;await avLoadIdentity();toast('Signed out.');}));
+document.getElementById('createCharacterBtn')?.addEventListener('click',()=>avRun(async()=>{if(!avSession)throw new Error('Sign in first.');const name=document.getElementById('charNameInput').value.trim();if(name.length<2)throw new Error('Enter the existing character name.');const payload={name,arcane_rank:document.getElementById('charRankInput').value.trim()||null,race:document.getElementById('charRaceInput').value.trim()||null};const {error}=await avClient().from('tower_characters').insert(payload);if(error)throw error;document.getElementById('charNameInput').value='';await avLoadCharacters();await avLoadRecords();toast('Tower character registered.');}));
+document.getElementById('submitClearBtn')?.addEventListener('click',()=>avRun(async()=>{if(!avSession)throw new Error('Sign in first.');const character_id=document.getElementById('clearCharacter').value;const floor_number=Number(document.getElementById('clearFloor').value);const difficulty=document.getElementById('clearDifficulty').value;const evidence_url=document.getElementById('clearEvidence').value.trim()||null;const notes=document.getElementById('clearNotes').value.trim();if(!character_id)throw new Error('Register/select a character first.');if(!Number.isInteger(floor_number)||floor_number<1||floor_number>100)throw new Error('Floor must be from 1 to 100.');if(!notes&&!evidence_url)throw new Error('Provide encounter notes or an evidence URL.');if(evidence_url&&!/^https:\/\//i.test(evidence_url))throw new Error('Evidence URL must start with https://');const {error}=await avClient().from('floor_clear_requests').insert({character_id,floor_number,difficulty,evidence_url,notes});if(error)throw error;document.getElementById('clearNotes').value='';document.getElementById('clearEvidence').value='';await avLoadMine();toast('Floor clear submitted for GM review.');}));
+document.getElementById('loadDisciplineBtn')?.addEventListener('click',()=>avRun(avLoadDiscipline));document.getElementById('refreshDisciplineLogBtn')?.addEventListener('click',()=>avRun(avLoadDisciplineLog));document.getElementById('fillDisciplineBtn')?.addEventListener('click',avFillDisciplineForm);document.getElementById('disciplineCharacter')?.addEventListener('change',()=>{const id=document.getElementById('disciplineCharacter').value;avRenderDisciplineCurrent(avDisciplineRecords.find(x=>x.character_id===id));});document.getElementById('saveDisciplineBtn')?.addEventListener('click',()=>avRun(avSaveDiscipline));
+document.getElementById('refreshMineBtn')?.addEventListener('click',()=>avRun(avLoadMine));document.getElementById('refreshRecordsBtn')?.addEventListener('click',()=>avRun(avLoadRecords));document.getElementById('refreshQueueBtn')?.addEventListener('click',()=>avRun(avLoadQueue));
+
+
+// Reliable theme picker: cycles all three complete visual skins without touching cloud data.
+(function avThemePicker(){
+ const themes=[{id:'glass',label:'Glass',emoji:'🫧'},{id:'aurora',label:'Aurora',emoji:'🌌'},{id:'solar',label:'Solar Pop',emoji:'🌈'},{id:'neon',label:'Neon Tide',emoji:'💠'}];
+ const btn=document.getElementById('themeToggle');
+ function applyTheme(id){const t=themes.find(x=>x.id===id)||themes[0];document.body.dataset.theme=t.id;document.documentElement.style.colorScheme=t.id==='glass'?'light':'dark';const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute('content',t.id==='glass'?'#edf7fc':t.id==='solar'?'#180b23':t.id==='neon'?'#04181b':'#070d20');if(btn){btn.textContent=t.emoji+' Theme: '+t.label;btn.dataset.currentTheme=t.id;btn.setAttribute('aria-label','Current theme: '+t.label+'. Tap to switch to the next theme.');btn.title='Current theme: '+t.label+' — tap to change';}try{localStorage.setItem('avTowerTheme',t.id)}catch(e){}}
+ let current='glass';try{current=localStorage.getItem('avTowerTheme')||'glass'}catch(e){}applyTheme(current);
+ if(btn){btn.onclick=()=>{const idx=themes.findIndex(x=>x.id===document.body.dataset.theme);applyTheme(themes[(idx+1)%themes.length].id);};btn.addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();btn.click();}})}
+})();
+
+(function avInit(){try{const saved=JSON.parse(localStorage.getItem(avCfgKey)||'null');const url=AV_SUPABASE_URL;const key=AV_SUPABASE_PUBLIC_KEY;const urlField=document.getElementById('sbUrl');const keyField=document.getElementById('sbKey');if(urlField)urlField.value=url;if(keyField)keyField.value=key;avConnect(false).catch(e=>{avStatus('CONNECTION ERROR');avMsg('authState','Connection could not initialize. Check the public Supabase configuration and project settings.',true);console.warn(e);});}catch(e){console.warn(e)}})();
+
+</script>
+</body></html>
